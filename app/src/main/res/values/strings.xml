@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Fantasy Football Fixtures</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="points">Points</string>
+    <string name="edit_team">Edit Team</string>
+    <string name="fixtures">Fixtures</string>
+    <string name="statistics">Statistics</string>
+    <string name="leagues">Leagues</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
