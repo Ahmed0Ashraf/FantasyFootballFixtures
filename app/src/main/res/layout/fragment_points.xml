@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-            android:text="J.Milner"
+            android:text="Milner"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -23,24 +23,23 @@
             android:id="@+id/mid2textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/mid1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintVertical_bias="1.0" app:layout_constraintStart_toEndOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/mid3textview"
-    />
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/sub4points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/guideline9"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -53,35 +52,34 @@
             android:id="@+id/sub4textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/sub1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline19"
             app:layout_constraintBottom_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/guideline9"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline9" android:layout_marginEnd="2dp"
+            android:layout_marginStart="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/sub4imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/fwdpoints"
+            app:layout_constraintTop_toBottomOf="@+id/guideline5"
             app:layout_constraintBottom_toTopOf="@+id/guideline19"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/sub3imagebtn"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline9"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/sub3points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/sub2points"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9" app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -94,35 +92,34 @@
             android:id="@+id/sub3textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/sub1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline19"
             app:layout_constraintBottom_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/sub2textview"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/sub3imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/fwdpoints"
+            app:layout_constraintTop_toBottomOf="@+id/guideline5"
             app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            app:layout_constraintStart_toEndOf="@+id/sub2imagebtn"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/sub2points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -135,27 +132,26 @@
             android:id="@+id/sub2textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/sub1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline19"
             app:layout_constraintBottom_toTopOf="@+id/guideline18"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/sub2imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/fwdpoints"
+            app:layout_constraintTop_toBottomOf="@+id/guideline5"
             app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/sub1points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +159,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline18"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -177,33 +173,33 @@
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/sub1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline19"
             app:layout_constraintBottom_toTopOf="@+id/guideline18"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/sub1imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/fwdpoints"
+            app:layout_constraintTop_toBottomOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintBottom_toTopOf="@+id/guideline19"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/fwd3points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/fwdtextview"
+            app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Aubamyang"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -216,35 +212,34 @@
             android:id="@+id/fwd3textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/fwd1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline17"
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
-            app:layout_constraintStart_toStartOf="@+id/guideline8"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/fwd3imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/mid1poits"
+            app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/fwd2imagebtn"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/fwd2points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/fwdtextview"
+            app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -257,36 +252,34 @@
             android:id="@+id/fwd2textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/fwd1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline17"
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/fwd2imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/mid1poits"
+            app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/fwdpoints"
             android:textColor="@android:color/background_light" android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/fwdtextview"
+            app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/fwd2points"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <TextView
-            android:text="M.Salah"
+            android:text="Salah"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -299,36 +292,34 @@
             android:id="@+id/fwdtextview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/fwd1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline17"
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/fwd2textview"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/fwd1imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/mid1poits"
+            app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/fwd2imagebtn"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/mid5points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/mid1textview"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintTop_toBottomOf="@+id/guideline14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline9"/>
     <TextView
-            android:text="G.Wijnaldum"
+            android:text="Wijnaldum"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -341,33 +332,31 @@
             android:id="@+id/mid5textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/mid1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintVertical_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/mid4textview"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline9" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/mid5imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintVertical_bias="1.0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/mid4points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/mid1textview"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/mid3points"
+            app:layout_constraintTop_toBottomOf="@+id/guideline14"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="Fabinho"
@@ -383,36 +372,34 @@
             android:id="@+id/mid4textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/mid1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/mid3textview"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/mid4imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/mid3imagebtn"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/mid3points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/mid1textview"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/mid2points"
+            app:layout_constraintTop_toBottomOf="@+id/guideline14"
+            app:layout_constraintStart_toEndOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
-            android:text="A.Lallana"
+            android:text="Lallana"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -425,32 +412,31 @@
             android:id="@+id/mid3textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/mid1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/def5textview4"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/mid3imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/mid2imagebtn" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/mid2points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/mid1textview"
-            app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toEndOf="@+id/mid1poits"
+            app:layout_constraintTop_toBottomOf="@+id/guideline14"
+            app:layout_constraintStart_toEndOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <TextView
             android:text="A.Robertson"
@@ -472,28 +458,28 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/mid2imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintVertical_bias="1.0" app:layout_constraintStart_toEndOf="@+id/mid1imagebtn"
+            app:layout_constraintStart_toEndOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
             app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/mid1poits"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintTop_toBottomOf="@+id/mid1textview"
+            app:layout_constraintTop_toBottomOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"/>
     <TextView
-            android:text="J.Henderson"
+            android:text="Henderson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -506,21 +492,21 @@
             android:id="@+id/mid1textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/mid1imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/def5points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/def4points"
+            app:layout_constraintStart_toEndOf="@+id/guideline9"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.388"/>
     <TextView
-            android:text="A.Robertson"
+            android:text="Robertson"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -533,15 +519,14 @@
             android:id="@+id/def5textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/def3imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/def4textview"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline9"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/def5imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -550,8 +535,8 @@
             app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintEnd_toEndOf="parent"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/mid1imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -562,12 +547,11 @@
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/def4points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintVertical_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/def3points"
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
     <TextView
             android:text="Otamendi"
@@ -583,14 +567,15 @@
             android:id="@+id/def4textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/def3imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
-            app:layout_constraintVertical_bias="0.666" app:layout_constraintStart_toEndOf="@+id/def3textview"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintStart_toEndOf="@+id/guideline8"
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/def4imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -601,11 +586,11 @@
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/def3points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintVertical_bias="1.0" app:layout_constraintStart_toEndOf="@+id/def2points"
+            app:layout_constraintStart_toEndOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
     <TextView
             android:layout_width="0dp"
@@ -620,14 +605,15 @@
             android:id="@+id/def3textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
-            app:layout_constraintTop_toBottomOf="@+id/def3imagebtn"
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:text="J.Matip"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:text="Matip" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/def3imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -638,15 +624,15 @@
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/def1points2"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
-    />
+            app:layout_constraintTop_toTopOf="@+id/guideline12"/>
     <TextView
-            android:text="Azpelquitta"
+            android:text="Azplequita"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:autoSizeTextType="uniform"
@@ -661,11 +647,12 @@
             android:textColor="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
             app:layout_constraintBottom_toTopOf="@+id/guideline12" app:layout_constraintTop_toTopOf="@+id/guideline13"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline6" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="55dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/def2imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -676,7 +663,7 @@
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/def2points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintStart_toEndOf="@+id/def1points2"
@@ -697,13 +684,14 @@
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintTop_toBottomOf="@+id/def1imagebtn"
-            app:layout_constraintBottom_toTopOf="@+id/guideline12"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@+id/guideline13"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp" app:layout_constraintBottom_toTopOf="@+id/guideline12"
+    />
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="56dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/def1imagebtn"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -718,7 +706,8 @@
             android:id="@+id/button4" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/Widget.AppCompat.Button.Borderless" android:background="@android:color/background_light"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"/>
+            app:layout_constraintBottom_toTopOf="@+id/guideline" android:layout_marginBottom="2dp"
+            android:layout_marginStart="4dp"/>
     <Button
             android:text="GameWeek 1"
             android:layout_width="142dp"
@@ -727,7 +716,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintBottom_toTopOf="@+id/guideline" style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/background_light"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="2dp"/>
     <ImageButton
             android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
             android:layout_width="33dp"
@@ -736,7 +725,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="2dp"
+            android:layout_marginEnd="4dp"/>
     <ImageButton
             android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
             android:layout_width="34dp"
@@ -746,10 +736,10 @@
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="2dp"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline"
-                                          android:orientation="horizontal" app:layout_constraintGuide_end="485dp"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline2"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.24"/>
@@ -783,8 +773,8 @@
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.2"/>
     <ImageButton
             android:src="@drawable/player"
-            android:layout_width="77dp"
-            android:layout_height="56dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:id="@+id/gk1imagebtn"
             android:background="@android:color/transparent"
             app:layout_constraintTop_toTopOf="@+id/guideline"
@@ -794,18 +784,27 @@
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"
             android:scaleType="fitCenter"/>
     <TextView
-            android:text="cech"
+            android:text="Cech"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMaxTextSize="100sp"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeStepGranularity="2sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="center"
             android:id="@+id/gk1textview" app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toBottomOf="@+id/gk1imagebtn"
-            app:layout_constraintBottom_toTopOf="@+id/guideline11" android:textAlignment="center"
-            android:textColor="@android:color/background_light"/>
+            app:layout_constraintTop_toBottomOf="@+id/guideline10"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11" android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/gk1points" app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
             app:layout_constraintBottom_toTopOf="@+id/guideline2" app:layout_constraintTop_toTopOf="@+id/guideline11"
@@ -816,7 +815,7 @@
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline13"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.35"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <android.support.constraint.Guideline android:layout_width="0dp" android:layout_height="0dp"
                                           android:id="@+id/guideline14"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.58"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -824,11 +823,11 @@
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.54"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline16"
-                                          android:orientation="horizontal" app:layout_constraintGuide_begin="394dp"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.77"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline17"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.73"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <android.support.constraint.Guideline android:layout_width="0dp" android:layout_height="0dp"
                                           android:id="@+id/guideline18"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.96"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"

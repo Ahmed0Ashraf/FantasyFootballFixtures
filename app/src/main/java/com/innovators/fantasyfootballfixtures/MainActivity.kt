@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction().add(R.id.container,fixturesFragment,"2").hide(fixturesFragment).commit()
-        supportFragmentManager.beginTransaction().add(R.id.container,pointsFragment,"1").commit()
+        supportFragmentManager.beginTransaction().add(R.id.newcont,fixturesFragment,"2").hide(fixturesFragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.newcont,pointsFragment,"1").commit()
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
