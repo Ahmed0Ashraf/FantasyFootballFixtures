@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:background="@android:color/darker_gray">
+
+    <TextView
+            android:text="7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/ptsTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline38"
+            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center"/>
+    <TextView
+            android:text="12%"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/selTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="center"
+            app:layout_constraintStart_toStartOf="@+id/guideline43"
+            app:layout_constraintEnd_toStartOf="@+id/guideline38"
+            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center"/>
+    <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/player"
+            android:id="@+id/playerImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline45"/>
+    <TextView
+            android:text="salah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerNameTextView" app:layout_constraintStart_toEndOf="@+id/playerImageView"
+            android:layout_marginStart="12dp" app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+            android:text="LIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerTeamTextView" app:layout_constraintStart_toEndOf="@+id/playerImageView"
+            android:layout_marginStart="12dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"/>
+    <TextView
+            android:text="gk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playerPositionTextView" app:layout_constraintStart_toEndOf="@+id/playerTeamTextView"
+            android:layout_marginStart="12dp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/playerNameTextView"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline38"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.85"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline43"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.7"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline44"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.55"/>
+    <TextView
+            android:text="11.0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/costTextView" app:layout_constraintStart_toStartOf="@+id/guideline44"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline43" android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent" android:gravity="center"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+    />
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline45"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.1"/>
+    <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="0dp" app:srcCompat="@drawable/ic_info_black_24dp"
+            android:id="@+id/playerStatsBtn"
+            app:layout_constraintEnd_toStartOf="@+id/guideline45"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintDimensionRatio="h,1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:background="@android:color/transparent"
+    />
+</android.support.constraint.ConstraintLayout>

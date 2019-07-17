@@ -8,7 +8,59 @@
     <string name="fixtures">Fixtures</string>
     <string name="statistics">Statistics</string>
     <string name="leagues">Leagues</string>
+    <string-array name="viewDrop">
+        <item>All Players</item>
+        <item>GoalKeepers</item>
+        <item>Defenders</item>
+        <item>Midfilders</item>
+        <item>Forwards</item>
+        <item>Arsenal</item>
+        <item>Aston Villa</item>
+        <item>Bournemouth</item>
+        <item>Brighton</item>
+        <item>Burnley</item>
+        <item>Chelsea</item>
+        <item>Crystal Palace</item>
+        <item>Everton</item>
+        <item>Leicester</item>
+        <item>Liverpool</item>
+        <item>Man City</item>
+        <item>Man Utd</item>
+        <item>Newcastle</item>
+        <item>Norwich</item>
+        <item>Sheffield Utd</item>
+        <item>Southampton</item>
+        <item>Spurs</item>
+        <item>Watford</item>
+        <item>West Ham</item>
+        <item>Wolves</item>
+
+
+    </string-array>
+    <string-array name="SortedBy">
+        <item>Total Points</item>
+        <item>Price</item>
+        <item>Selected By</item>
+        <item>Goals Scored</item>
+        <item>Assists</item>
+        <item>Clean Sheets</item>
+        <item>Goals Conceded</item>
+        <item>Penalties Saved</item>
+        <item>Yellow Cards</item>
+        <item>Red Cards</item>
+        <item>Saves</item>
+        <item>Bonus</item>
+
+
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
 </resources>
