@@ -54,15 +54,7 @@ class PlayerStatsActivity : AppCompatActivity() {
             active = fixturesFragment
         }
 
-        addPlayerBtn.setOnClickListener {
 
-
-            var intent = Intent(this,MainActivity::class.java)
-            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            //startActivity(intent)
-            this.parent.finish()
-
-        }
     }
 
 

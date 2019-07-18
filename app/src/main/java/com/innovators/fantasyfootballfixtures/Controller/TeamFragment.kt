@@ -68,10 +68,22 @@ class TeamFragment : Fragment() {
 
                 var intent = Intent(activity,SelectedPlayer::class.java)
                 intent.putExtra("position",position)
-                startActivity(intent)
+                startActivityForResult(intent,100)
             }
         }
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 100 && resultCode == 10){
+
+
+        }
+    }
+
+
+
 
 
 }

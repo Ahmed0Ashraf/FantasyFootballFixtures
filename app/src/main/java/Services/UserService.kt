@@ -1,5 +1,7 @@
 package Services
 
+import Model.Player
+import Model.Team
 import Utilities.URL_DATA
 import android.content.Context
 import android.util.Log
@@ -16,6 +18,8 @@ import kotlin.math.log
 object UserService {
     var userId : Int = 0
     var playersId = arrayListOf<Int>()
+    var myPlayers = arrayListOf<Player>()
+
     var captianIndex = -1
     var viceCaptianIndex = -1
     var multiplierIndex = -1
@@ -91,6 +95,69 @@ object UserService {
         }
 
         App.prefs.requestQueue.add(teamRequest)
+
+    }
+    fun findTeamPreSeason(complete:(Boolean)-> Unit){
+
+        val playersRequest3 = object: JsonObjectRequest(Method.GET, URL_DATA,null, Response.Listener { response ->
+            try{
+                var playersObject = response.getJSONArray("elements")
+                for(x in 0 until playersId.size){
+
+                    if (playersId[x] == 0){
+                        myPlayers.add(Player(0,"","",0,0,0,false,false,0.0,0.0,0,0,0,0,0,0,0,0,0,0))
+                    }else{
+                        for(y in 0 until playersObject.length()){
+                            val player = playersObject.getJSONObject(y)
+
+                            if (playersId [x].equals(player.getInt("id"))){
+                                val webName = player.getString("web_name")
+                                val status = player.getString("status")
+                                val teamCode = player.getInt("team_code")
+                                val elementType = player.getInt("element_type")
+                                val lastPoints = player.getInt("event_points")
+                                val totalPoints = player.getInt("total_points")
+                                val goalsScored = player.getInt("goals_scored")
+                                val assists = player.getInt("assists")
+                                val cleanSheets = player.getInt("clean_sheets")
+                                val goalsConceded = player.getInt("goals_conceded")
+                                val penaltiesSaved = player.getInt("penalties_saved")
+                                val yellowCards = player.getInt("yellow_cards")
+                                val redCards = player.getInt("red_cards")
+                                val saves = player.getInt("saves")
+                                val bonus = player.getInt("bonus")
+
+                                val cost = player.getInt("now_cost").toDouble()
+                                val percent = player.getDouble("selected_by_percent")
+                                val id = player.getInt("id")
+                                myPlayers.add(
+                                    Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+
+                                )
+
+
+                            }
+                        }
+                    }
+
+                }
+
+                complete(true)
+            }catch (e: JSONException){
+                complete(false)
+            }
+
+        }, Response.ErrorListener { error ->
+            Log.d("request error","couldn't get waziifa"+error)
+            complete(false)
+        })
+        {
+            override fun getBodyContentType(): String {
+                return super.getBodyContentType()
+            }
+        }
+
+        App.prefs.requestQueue.add(playersRequest3)
 
     }
 }

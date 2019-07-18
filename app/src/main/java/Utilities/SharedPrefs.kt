@@ -12,7 +12,7 @@ class SharedPrefs(context: Context) {
     val PLAYER_IDS = "playerIds"
 
     var playerIds : String
-    get() = prefs.getString(PLAYER_IDS,"")
+    get() = prefs.getString(PLAYER_IDS,"0-0-0-0-0-0-0-0-0-0-0-0-0-0-0")
     set(value) = prefs.edit().putString(PLAYER_IDS,value).apply()
 
     val requestQueue = Volley.newRequestQueue(context)

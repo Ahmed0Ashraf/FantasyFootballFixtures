@@ -7,6 +7,7 @@ class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var e
              var isViceCaptian:Boolean,var price:Double,
              var percent:Double,var totalPoints:Int,var goalsScored:Int,var assists:Int, var cleanSheets:Int,
              var goalsConceded:Int,var penaltiesSaved:Int,var yellowCards:Int,var redCards:Int,var saves:Int,var bonus:Int):Parcelable {
+
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),

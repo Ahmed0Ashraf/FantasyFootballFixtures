@@ -4,6 +4,7 @@ import Model.Player
 import Services.PlayerService
 import Services.StatsService
 import Services.TeamsService
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
@@ -22,6 +23,7 @@ import com.innovators.fantasyfootballfixtures.R
 
 class StatsRecycleAdapter (val context: Context, val players: ArrayList<Player>) : RecyclerView.Adapter<StatsRecycleAdapter.Holder>() {
 
+    var flag = 0
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder?.bindPlayer(players[position], context)
     }
@@ -46,6 +48,7 @@ class StatsRecycleAdapter (val context: Context, val players: ArrayList<Player>)
         val price = itemView?.findViewById<TextView>(R.id.costTextView)
         val selection = itemView?.findViewById<TextView>(R.id.selTextView)
         val statsbtn = itemView?.findViewById<ImageButton>(R.id.playerStatsBtn)
+        val addbtn = itemView?.findViewById<ImageButton>(R.id.addPlayerBtn)
 
 
 
@@ -63,6 +66,12 @@ class StatsRecycleAdapter (val context: Context, val players: ArrayList<Player>)
                     }
                 }
 
+            }
+            addbtn?.setOnClickListener {
+                var intent = Intent()
+                intent.putExtra("player",player)
+                (context as Activity).setResult(10,intent)
+                    context .finish()
             }
 
 
@@ -128,6 +137,18 @@ class StatsRecycleAdapter (val context: Context, val players: ArrayList<Player>)
                     playerImage?.setImageResource(resourceId)
 
                 }
+            }
+            playerImage?.setOnClickListener{
+
+                if(statsbtn?.visibility == View.VISIBLE){
+                    statsbtn?.visibility = View.INVISIBLE
+                    addbtn?.visibility = View.VISIBLE
+
+                }else{
+                    statsbtn?.visibility = View.VISIBLE
+                    addbtn?.visibility = View.INVISIBLE
+                }
+
             }
 
 
