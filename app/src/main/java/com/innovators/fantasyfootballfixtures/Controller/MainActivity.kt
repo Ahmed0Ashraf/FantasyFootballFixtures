@@ -12,22 +12,21 @@ class MainActivity : AppCompatActivity() {
     var pointsFragment = PointsFragment()
     var fixturesFragment = FixturesFragment()
     var teamFragment = TeamFragment()
-    var statsFragment = StatsFragment()
     var leaguesFragment = LeaguesFragment()
 
 
 
 
-    var active : Fragment = teamFragment
+    var active : Fragment = pointsFragment
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_Points -> {
 
-                //supportFragmentManager.beginTransaction().hide(active).show(pointsFragment).commit()
-                //active = pointsFragment
+                supportFragmentManager.beginTransaction().hide(active).show(pointsFragment).commit()
+                active = pointsFragment
 
-                return@OnNavigationItemSelectedListener false
+                return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_Team -> {
 
@@ -42,11 +41,7 @@ class MainActivity : AppCompatActivity() {
 
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_Statistics -> {
-                supportFragmentManager.beginTransaction().hide(active).show(statsFragment).commit()
-                active = statsFragment
-                return@OnNavigationItemSelectedListener true
-            }
+
             R.id.navigation_Leagues -> {
                 supportFragmentManager.beginTransaction().hide(active).show(leaguesFragment).commit()
                 active = leaguesFragment
@@ -60,15 +55,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        navigation.selectedItemId = R.id.navigation_Team
+        //navigation.selectedItemId = R.id.navigation_Team
 
         supportFragmentManager.beginTransaction().add(R.id.newcont,leaguesFragment).hide(leaguesFragment).commit()
-        supportFragmentManager.beginTransaction().add(R.id.newcont,statsFragment).hide(statsFragment).commit()
 
         supportFragmentManager.beginTransaction().add(R.id.newcont,fixturesFragment).hide(fixturesFragment).commit()
-        supportFragmentManager.beginTransaction().add(R.id.newcont,teamFragment).commit()
-        //supportFragmentManager.beginTransaction().add(R.id.newcont,pointsFragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.newcont,teamFragment).hide(teamFragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.newcont,pointsFragment).commit()
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+    }
+
+    override fun onBackPressed() {
     }
 }

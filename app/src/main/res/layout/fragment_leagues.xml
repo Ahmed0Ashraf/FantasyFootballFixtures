@@ -1,84 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                              android:layout_height="match_parent"
-                                             tools:context=".Controller.LeaguesFragment" android:id="@+id/frameLayout5">
-
-    <!-- TODO: Update blank fragment layout -->
-
-    <TextView
-            android:text="Private Classic League"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView5" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="20dp"
-            android:layout_marginStart="16dp"/>
+                                             tools:context=".Controller.LeaguesFragment" android:id="@+id/frameLayout5"
+                                             android:background="@android:color/background_light">
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:id="@+id/linearLayoutpriClassicLeagueLayout" app:layout_constraintHorizontal_bias="0.0">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout2">
         <include layout="@layout/league_header"></include>
-        <include layout="@layout/league_layout"></include>
-        <include layout="@layout/league_layout"></include>
-
-
     </LinearLayout>
-    <TextView
-            android:text="Private H2H League"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewpriH2HLeagueLayout6"
+
+    <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/linearLayoutpriClassicLeagueLayout"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewpriH2HLeagueLayout6" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:id="@+id/priH2HLeagueLayout">
-        <include layout="@layout/league_header"></include>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/scrollView3"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+            >
 
-    </LinearLayout>
-    <TextView
-            android:text="Public H2H League"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView7"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/priH2HLeagueLayout" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:id="@+id/pubH2HLeagueLayout">
-        <include layout="@layout/league_header"></include>
+                <TextView
+                        android:text="Enter ID:"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/editText"
+                        android:layout_marginStart="8dp"
+                        android:textStyle="italic" android:textAllCaps="true"
+                        android:layout_marginTop="16dp" app:layout_constraintTop_toTopOf="parent"/>
+                <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toStartOf="@+id/rivalAddBtn"
+                        app:layout_constraintTop_toTopOf="@+id/textView"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView"
+                        android:hint="Rival ID:"/>
+                <Button
+                        android:text="ADD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rivalAddBtn"
+                        app:layout_constraintStart_toEndOf="@+id/editText"
+                        app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/editText"
+                        app:layout_constraintBottom_toBottomOf="@+id/editText"
+                        android:layout_marginEnd="8dp"/>
+                <TextView
+                        android:text="Choose Rival"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@+id/editText" android:textAlignment="center"
+                        android:textStyle="bold|italic" android:textAllCaps="true"/>
+                <Spinner
+                        android:layout_width="223dp"
+                        android:layout_height="36dp"
+                        android:id="@+id/spinner"
+                        app:layout_constraintStart_toStartOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="@+id/textView2" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2"/>
+                <TextView
+                        android:text="Team Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginEnd="8dp"
+                        android:textSize="18sp" android:textAlignment="center" android:textStyle="bold|italic"
+                        android:textAllCaps="true"
+                        app:layout_constraintHorizontal_bias="0.489"
+                        app:layout_constraintTop_toTopOf="@+id/guideline73" android:layout_marginTop="16dp"/>
+                <View
+                        android:id="@+id/divider10"
+                        android:layout_width="395dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView3"
+                        android:layout_marginTop="8dp"/>
+                <TextView
+                        android:text="Line Up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/include"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline48"
+                        android:textStyle="bold|italic" android:textAllCaps="true"
+                        app:layout_constraintHorizontal_bias="0.4"
+                />
+                <TextView
+                        android:text="Substitutes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView23"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/include" app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48"
+                        android:textStyle="bold|italic" android:textAllCaps="true"
+                        app:layout_constraintHorizontal_bias="0.62"
+                />
+                <include layout="@layout/rivals_header"
+                         android:layout_height="wrap_content"
+                         android:layout_width="0dp"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintStart_toStartOf="parent"
+                         android:id="@+id/include"
+                         app:layout_constraintHorizontal_bias="0.0"
+                         app:layout_constraintTop_toBottomOf="@+id/divider10"
+                         android:layout_marginTop="8dp"
+                />
+                <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:id="@+id/guideline48"
+                                                      android:orientation="vertical"
+                                                      app:layout_constraintGuide_percent="0.5"/>
+                <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:id="@+id/guideline73"
+                                                      app:layout_constraintGuide_begin="127dp"
+                                                      android:orientation="horizontal"/>
+                <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:id="@+id/guideline74"
+                                                      app:layout_constraintGuide_begin="94dp"
+                                                      android:orientation="vertical"/>
+                <android.support.constraint.Guideline android:layout_width="wrap_content"
+                                                      android:layout_height="wrap_content"
+                                                      android:id="@+id/guideline75"
+                                                      app:layout_constraintGuide_begin="317dp"
+                                                      android:orientation="vertical"/>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline48"
+                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/linearLayoutLineUp"
+                        android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView4">
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
 
-    </LinearLayout>
-    <TextView
-            android:text="Global Leagues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/pubH2HLeagueLayout" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:id="@+id/globalLeagueLayout">
-        <include layout="@layout/league_header"></include>
 
-    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayoutSubs"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/textView23">
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+                    <include layout="@layout/rivals"/>
+
+
+                </LinearLayout>
+                <TextView
+                        android:text="Rivals Info"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView46"
+                        app:layout_constraintStart_toStartOf="@+id/guideline74"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline75"
+                        app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutLineUp"/>
+                <include layout="@layout/rival_compare"
+                         android:layout_height="0dp"
+                         android:layout_width="0dp" app:layout_constraintStart_toEndOf="@+id/linearLayoutLineUp"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintTop_toBottomOf="@+id/linearLayoutSubs" android:layout_marginBottom="8dp"
+                         app:layout_constraintBottom_toTopOf="@+id/textView46"/>
+                <View
+                        android:id="@+id/divider11"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayoutLineUp"/>
+                <View
+                        android:id="@+id/divider12"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintTop_toBottomOf="@+id/include"
+                        app:layout_constraintStart_toEndOf="@+id/linearLayoutLineUp"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView46"/>
+                <View
+                        android:id="@+id/divider13"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSubs"/>
+                <View
+                        android:id="@+id/divider14"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toTopOf="@+id/textView46"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline48"/>
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

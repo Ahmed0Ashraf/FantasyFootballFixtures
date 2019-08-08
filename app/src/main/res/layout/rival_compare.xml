@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="wrap_content"
+                                             android:background="@android:color/darker_gray">
+
+    <TextView
+            android:text="Projected Bonus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leagueTextView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView53"/>
+    <TextView
+            android:text="34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView52" app:layout_constraintEnd_toStartOf="@+id/guideline47"
+            android:layout_marginEnd="32dp"
+            android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
+            android:layout_marginTop="8dp" android:textColor="@color/colorPrimary"/>
+    <TextView
+            android:text="00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView53" android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
+            android:layout_marginTop="8dp" android:textColor="@android:color/holo_red_dark"/>
+    <TextView
+            android:text="Round Points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leagueTextView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView49"/>
+    <TextView
+            android:text="1234"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView49" app:layout_constraintEnd_toStartOf="@+id/guideline47"
+            android:layout_marginEnd="12dp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
+            android:layout_marginTop="8dp" android:textSize="24sp" android:textColor="@color/colorPrimary"/>
+    <TextView
+            android:text="1200"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView50" android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
+            app:layout_constraintStart_toStartOf="@+id/guideline47" android:layout_marginTop="8dp"
+            android:textSize="24sp" android:textColor="@android:color/holo_red_dark"/>
+    <TextView
+            android:text="Total Points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leagueTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="14sp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView47"/>
+    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                          android:id="@+id/guideline47"
+                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.5"/>
+    <View
+            android:id="@+id/divider6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <TextView
+            android:text="34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView31" app:layout_constraintEnd_toStartOf="@+id/guideline47"
+            android:layout_marginEnd="32dp"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
+            android:textColor="@color/colorPrimary"/>
+    <TextView
+            android:text="00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView32" android:layout_marginStart="32dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
+            android:textColor="@android:color/holo_red_dark"/>
+    <TextView
+            android:text="YOU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView47" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:textSize="18sp" android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline47" android:textColor="@color/colorPrimary"/>
+    <TextView
+            android:text="HIM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView48" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="@+id/guideline47"
+            android:layout_marginStart="32dp" android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark"/>
+</android.support.constraint.ConstraintLayout>

@@ -46,6 +46,14 @@ object PlayerService {
                             val redCards = player.getInt("red_cards")
                             val saves = player.getInt("saves")
                             val bonus = player.getInt("bonus")
+                            val news = player.getString("news")
+                            var chance = 0
+                            if (news.equals("")){
+                                chance = 100
+                            }else{
+                                chance = player.getInt("chance_of_playing_next_round")
+
+                            }
 
 
 
@@ -53,7 +61,7 @@ object PlayerService {
 
                             val percent = player.getDouble("selected_by_percent")
 
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                             break
                         }
@@ -76,6 +84,8 @@ object PlayerService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })
@@ -113,6 +123,15 @@ object PlayerService {
                         val redCards = player.getInt("red_cards")
                         val saves = player.getInt("saves")
                         val bonus = player.getInt("bonus")
+                        val news = player.getString("news")
+                        var chance = 0
+                        if (news.equals("")){
+                            chance = 100
+                        }else{
+                            chance = player.getInt("chance_of_playing_next_round")
+
+                        }
+
 
                         val cost = player.getInt("now_cost").toDouble()
 
@@ -120,7 +139,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
                     }
@@ -132,6 +151,8 @@ object PlayerService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })
@@ -169,6 +190,15 @@ object PlayerService {
                         val redCards = player.getInt("red_cards")
                         val saves = player.getInt("saves")
                         val bonus = player.getInt("bonus")
+                        val news = player.getString("news")
+                        var chance = 0
+                        if (news.equals("")){
+                            chance = 100
+                        }else{
+                            chance = player.getInt("chance_of_playing_next_round")
+
+                        }
+
 
                         val cost = player.getInt("now_cost").toDouble()
 
@@ -176,7 +206,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
                     }
@@ -188,6 +218,8 @@ object PlayerService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })
@@ -224,6 +256,15 @@ object PlayerService {
                     val redCards = player.getInt("red_cards")
                     val saves = player.getInt("saves")
                     val bonus = player.getInt("bonus")
+                    val news = player.getString("news")
+                    var chance = 0
+                    if (news.equals("")){
+                        chance = 100
+                    }else{
+                        chance = player.getInt("chance_of_playing_next_round")
+
+                    }
+
 
                     val cost = player.getInt("now_cost").toDouble()
 
@@ -231,7 +272,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
 
@@ -243,6 +284,8 @@ object PlayerService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })

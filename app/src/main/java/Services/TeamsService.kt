@@ -22,6 +22,15 @@ object TeamsService {
         }
         return 0
     }
+    fun findTeamidByCode (code:Int):Int{
+        for(x in 0 until teams.size){
+            if(teams [x].teamCode.equals(code)){
+                return teams[x].id
+            }
+        }
+        return 0
+    }
+
     fun findTeamName (teamCode:Int):String{
         for(x in 0 until teams.size){
             if(teams [x].teamCode.equals(teamCode)){
@@ -30,7 +39,7 @@ object TeamsService {
         }
         return ""
     }
-    fun findTeamById (id:Int):String{
+    fun findTeamShortNameById (id:Int):String{
         for(x in 0 until teams.size){
             if(teams [x].id.equals(id)){
                 return teams[x].shortName
@@ -38,7 +47,14 @@ object TeamsService {
         }
         return ""
     }
-
+    fun findTeamNameById (id:Int):String{
+        for(x in 0 until teams.size){
+            if(teams [x].id.equals(id)){
+                return teams[x].name
+            }
+        }
+        return ""
+    }
     fun findTeams(complete:(Boolean)-> Unit){
 
         val teamRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Response.Listener { response ->
@@ -64,6 +80,7 @@ object TeamsService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
             Log.d("request error","couldn't get waziifa"+error)
             complete(false)
         })

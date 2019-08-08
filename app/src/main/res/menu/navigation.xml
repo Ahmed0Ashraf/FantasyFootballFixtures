@@ -17,11 +17,6 @@
             android:title="@string/fixtures"/>
 
     <item
-            android:id="@+id/navigation_Statistics"
-            android:icon="@drawable/ic_statistics_24dp"
-            android:title="@string/statistics"/>
-
-    <item
             android:id="@+id/navigation_Leagues"
             android:icon="@drawable/ic_leagues_24dp"
             android:title="@string/leagues"/>

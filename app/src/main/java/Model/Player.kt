@@ -6,7 +6,7 @@ import android.os.Parcelable
 class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var elementType:Int,var lastPoints:Int,var isCaptian:Boolean,
              var isViceCaptian:Boolean,var price:Double,
              var percent:Double,var totalPoints:Int,var goalsScored:Int,var assists:Int, var cleanSheets:Int,
-             var goalsConceded:Int,var penaltiesSaved:Int,var yellowCards:Int,var redCards:Int,var saves:Int,var bonus:Int):Parcelable {
+             var goalsConceded:Int,var penaltiesSaved:Int,var yellowCards:Int,var redCards:Int,var saves:Int,var bonus:Int,var news:String,var chanceOfPlaying:Int):Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
@@ -28,8 +28,11 @@ class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var e
         parcel.readInt(),
         parcel.readInt(),
         parcel.readInt(),
+        parcel.readInt(),
+        parcel.readString(),
         parcel.readInt()
-    ) {
+
+        ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -54,6 +57,8 @@ class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var e
         parcel.writeInt(redCards)
         parcel.writeInt(saves)
         parcel.writeInt(bonus)
+        parcel.writeString(news)
+        parcel.writeInt(chanceOfPlaying)
 
     }
 

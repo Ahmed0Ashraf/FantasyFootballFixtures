@@ -2,8 +2,11 @@ package com.innovators.fantasyfootballfixtures.Controller
 
 import Adapters.StatsRecycleAdapter
 import Model.Player
+import Services.DataService
 import Services.PlayerService
 import Services.TeamsService
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -11,6 +14,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.innovators.fantasyfootballfixtures.R
 import kotlinx.android.synthetic.main.activity_selected_player.*
 import kotlinx.android.synthetic.main.stats_header.*
@@ -24,10 +28,33 @@ class SelectedPlayer : AppCompatActivity() {
         setContentView(R.layout.activity_selected_player)
 
         var position = intent.getIntExtra("position", 0)
+        var index = intent.getIntExtra("index", 0)
+
         playersCategorypinner.setSelection(position)
         PlayerService.searchPlayersByPosition(position) { searchSucces ->
             if (searchSucces) {
-                adapter = StatsRecycleAdapter(this!!, PlayerService.searchedPlayers)
+
+                adapter = StatsRecycleAdapter(this!!, PlayerService.searchedPlayers){player ->
+                    if (DataService.checkInternetConncetion()) {
+                        if (position == player.elementType){
+                            var intent = Intent()
+                            intent.putExtra("index",index)
+                            intent.putExtra("player",player)
+                            this.setResult(10,intent)
+                            finish()
+                        }else{
+
+                            Toast.makeText(this,"Please Select A Player According To The Selected Position",Toast.LENGTH_LONG).show()
+
+                        }
+                    }else {
+                        Toast.makeText(App.appContext,"Connecntion Problems Please Try Again", Toast.LENGTH_LONG).show()
+
+                    }
+
+
+
+                }
                 searchRecycleView.adapter = adapter
                 val layoutManager = LinearLayoutManager(this)
                 searchRecycleView.layoutManager = layoutManager as RecyclerView.LayoutManager?

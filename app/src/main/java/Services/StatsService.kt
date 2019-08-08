@@ -7,6 +7,7 @@ import Utilities.URL_DATA
 import Utilities.URL_STATS
 import android.util.Log
 import com.android.volley.Response
+import com.android.volley.Response.Listener
 import com.android.volley.toolbox.JsonObjectRequest
 import com.innovators.fantasyfootballfixtures.Controller.App
 import org.json.JSONException
@@ -18,7 +19,7 @@ object StatsService {
 
     fun findPlayerStats (playerId:Int, complete:(Boolean)-> Unit){
 
-        val statsRequest = object: JsonObjectRequest(Method.GET, URL_STATS+playerId+"/",null, Response.Listener { response ->
+        val statsRequest = object: JsonObjectRequest(Method.GET, URL_STATS+playerId+"/",null, Listener { response ->
             try{
                 ///////////////////////////////////////fixtures
                 var fixtureArray = response.getJSONArray("fixtures")
@@ -33,12 +34,12 @@ object StatsService {
                     var opponentString = ""
                     if (fixture.getBoolean("is_home")){
 
-                        var opponent = TeamsService.findTeamById(fixture.getInt("team_a"))
+                        var opponent = TeamsService.findTeamShortNameById(fixture.getInt("team_a"))
                         opponentString = opponent+" (H)"
 
                     }
                     else{
-                        var opponent = TeamsService.findTeamById(fixture.getInt("team_h"))
+                        var opponent = TeamsService.findTeamShortNameById(fixture.getInt("team_h"))
                         opponentString = opponent+" (A)"
 
                     }
@@ -80,6 +81,8 @@ object StatsService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get waziifa"+error)
             complete(false)
         })

@@ -1,6 +1,11 @@
 package com.innovators.fantasyfootballfixtures.Controller
 
 
+import Model.Player
+import Services.DataService
+import Services.FixturesService
+import Services.TeamsService
+import Services.UserService
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -9,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.innovators.fantasyfootballfixtures.R
 import kotlinx.android.synthetic.main.fragment_team.*
 
@@ -40,6 +46,9 @@ class TeamFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        gWFixturetext.text = "Gameweek "+UserService.currentGW
+
+
         tshirtImages = arrayListOf(gk1teamimagebtn,gk2teamimagebtn,def1teamimagebtn,def2teamimagebtn,def3teamimagebtn,def4teamimagebtn,def5teamimagebtn,
             mid1teamimagebtn,mid2teamimagebtn,mid3teamimagebtn,mid4teamimagebtn,mid5teamimagebtn,fwd1teamimagebtn,fwd2teamimagebtn,fwd3teamimagebtn)
 
@@ -48,6 +57,34 @@ class TeamFragment : Fragment() {
 
         teamOpps = arrayListOf(gk1teamopp,gk2teamopp,def1teamopp,def2teamopp,def3teamopp,def4teamopp,def5teamopp,mid1teamopp,mid2teamopp,mid3teamopp,mid4teamopp,mid5teamopp,
             fwd1teamopp,fwd2teamopp,fwd3teamopp)
+
+        for (x in 0 until 15){
+            if (UserService.myPlayers[x].id != 0){
+                //////////error
+                playerNames[x].text = UserService.myPlayers[x].name
+                var imageShortName = TeamsService.findTeamName(UserService.myPlayers[x]!!.teamCode).toLowerCase().replace(" ","")
+                val resourceId = this.resources.getIdentifier(imageShortName,"drawable",activity?.packageName)
+                tshirtImages[x]?.setImageResource(resourceId)
+                var teamId = TeamsService.findTeamidByCode(UserService.myPlayers[x].teamCode)
+
+                for (y in 0 until FixturesService.gwFixtures.size){
+                    if (FixturesService.gwFixtures[y].homeTeam == teamId){
+                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].awayTeam)
+                        var oppString = oppShortName+" (H)"
+                        teamOpps[x].text = oppString
+                    }
+                    if (FixturesService.gwFixtures[y].awayTeam == teamId){
+                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].homeTeam)
+                        var oppString = oppShortName+" (A)"
+                        teamOpps[x].text = oppString
+                    }
+
+                }
+
+
+            }
+
+        }
 
         for (x in 0 until tshirtImages.size){
             var position = 0
@@ -65,19 +102,159 @@ class TeamFragment : Fragment() {
             }
 
             tshirtImages[x].setOnClickListener{
+                if (DataService.checkInternetConncetion()){
+                    var intent = Intent(activity,SelectedPlayer::class.java)
+                    intent.putExtra("index",x)
+                    intent.putExtra("position",position)
+                    startActivityForResult(intent,100)
+                }
+                else {
+                    Toast.makeText(App.appContext,"Connecntion Problems Please Try Again", Toast.LENGTH_LONG).show()
 
-                var intent = Intent(activity,SelectedPlayer::class.java)
-                intent.putExtra("position",position)
-                startActivityForResult(intent,100)
+                }
+
             }
         }
+
+        nextGWFixtureBtn.setOnClickListener {
+            if (UserService.requestedGW + 1 <= 38){
+
+                UserService.requestedGW ++
+
+                FixturesService.findRequestedGWFixturesTeam{gWSuccess ->
+                    if (gWSuccess){
+                        gWFixturetext.text = "Gameweek "+UserService.requestedGW
+
+                        for (x in 0 until UserService.myPlayers.size){
+                            if (UserService.myPlayers[x].id != 0){
+
+                                var teamId = TeamsService.findTeamidByCode(UserService.myPlayers[x].teamCode)
+
+                                for (y in 0 until FixturesService.gwFixtures.size){
+                                    if (FixturesService.gwFixtures[y].homeTeam == teamId){
+                                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].awayTeam)
+                                        var oppString = oppShortName+" (H)"
+                                        teamOpps[x].text = oppString
+                                    }
+                                    if (FixturesService.gwFixtures[y].awayTeam == teamId){
+                                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].homeTeam)
+                                        var oppString = oppShortName+" (A)"
+                                        teamOpps[x].text = oppString
+                                    }
+
+                                }
+
+
+                            }
+
+                        }
+
+
+                    }
+                    else {
+                        UserService.requestedGW --
+
+                    }
+
+                }
+
+
+
+            }
+
+
+        }
+        previousGWFixtureBtn.setOnClickListener {
+            if (UserService.requestedGW - 1 >= UserService.currentGW){
+                UserService.requestedGW --
+
+                FixturesService.findRequestedGWFixturesTeam{gWSuccess ->
+                    if (gWSuccess){
+
+                        gWFixturetext.text = "Gameweek "+UserService.requestedGW
+
+                        for (x in 0 until UserService.myPlayers.size){
+                            if (UserService.myPlayers[x].id != 0){
+
+                                var teamId = TeamsService.findTeamidByCode(UserService.myPlayers[x].teamCode)
+
+                                for (y in 0 until FixturesService.gwFixtures.size){
+                                    if (FixturesService.gwFixtures[y].homeTeam == teamId){
+                                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].awayTeam)
+                                        var oppString = oppShortName+" (H)"
+                                        teamOpps[x].text = oppString
+                                    }
+                                    if (FixturesService.gwFixtures[y].awayTeam == teamId){
+                                        var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].homeTeam)
+                                        var oppString = oppShortName+" (A)"
+                                        teamOpps[x].text = oppString
+                                    }
+
+                                }
+
+
+                            }
+
+                        }
+
+
+                    }
+                    else {
+                        UserService.requestedGW ++
+                    }
+
+                }
+
+
+            }
+
+
+        }
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 100 && resultCode == 10){
+            var player = data?.getParcelableExtra<Player>("player")
+            var index  = data?.getIntExtra("index", 0)
 
+            playerNames[index!!].text = player?.name
+
+            var imageShortName = TeamsService.findTeamName(player!!.teamCode).toLowerCase().replace(" ","")
+            val resourceId = this.resources.getIdentifier(imageShortName,"drawable",activity?.packageName)
+            tshirtImages[index]?.setImageResource(resourceId)
+
+            var teamId = TeamsService.findTeamidByCode(player.teamCode)
+
+            for (y in 0 until FixturesService.gwFixtures.size){
+                if (FixturesService.gwFixtures[y].homeTeam == teamId){
+                    var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].awayTeam)
+                    var oppString = oppShortName+" (H)"
+                    teamOpps[index].text = oppString
+                }
+                if (FixturesService.gwFixtures[y].awayTeam == teamId){
+                    var oppShortName = TeamsService.findTeamShortNameById(FixturesService.gwFixtures[y].homeTeam)
+                    var oppString = oppShortName+" (A)"
+                    teamOpps[index].text = oppString
+                }
+
+            }
+
+            UserService.myPlayers[index] = player!!
+            var ids = ""
+            for (x in 0 until UserService.myPlayers.size){
+                if (x == 14){
+                    ids += UserService.myPlayers[x].id
+
+                }else{
+                    ids += UserService.myPlayers[x].id
+                    ids += "-"
+
+                }
+            }
+            App.prefs.playerIds = ids
 
         }
     }

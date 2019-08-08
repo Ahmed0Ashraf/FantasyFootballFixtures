@@ -4,36 +4,38 @@
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              android:layout_width="match_parent"
                                              android:layout_height="wrap_content"
-                                             android:background="@color/colorPrimaryDark">
-    <TextView
-            android:text="Rank"
-            android:layout_width="0dp"
+                                             android:background="@color/colorAccent">
+    <Button
+            android:text="GameWeek 1"
             android:layout_height="wrap_content"
-            android:id="@+id/textView10"
+            android:id="@+id/gWFixturetext"
             app:layout_constraintTop_toTopOf="parent"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@+id/guideline39"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-            android:layout_width="0dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@android:color/background_light"
+            app:layout_constraintStart_toEndOf="@+id/previousGWFixtureBtn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/nextGWFixtureBtn"
+            android:layout_width="0dp"/>
+    <ImageButton
+            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView9"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="@+id/guideline40"
-            app:layout_constraintEnd_toStartOf="@+id/guideline39"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline39"
-                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.7"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline40"
-                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.6"/>
-    <TextView
-            android:text="League"
-            android:layout_width="0dp"
+            android:id="@+id/previousGWFixtureBtn"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@android:color/background_light"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/gWFixturetext"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/nextGWFixtureBtn"
+            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
+            android:background="@android:color/background_light"
+            app:layout_constraintStart_toEndOf="@+id/gWFixturetext"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textAlignment="center"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline40"/>
+    />
 </android.support.constraint.ConstraintLayout>

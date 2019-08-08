@@ -35,7 +35,7 @@
             app:layout_constraintVertical_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline45"/>
     <TextView
-            android:text="salah"
+            android:text="Alexandar-Arnold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
 
@@ -99,4 +99,10 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/guideline45"
             android:background="@android:color/transparent" android:visibility="invisible"/>
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_sentiment_neutral_yellow_24dp"
+            android:id="@+id/statusImage" app:layout_constraintEnd_toStartOf="@+id/guideline44"
+            app:layout_constraintBottom_toBottomOf="@+id/divider" android:layout_marginBottom="2dp"/>
 </android.support.constraint.ConstraintLayout>

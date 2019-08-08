@@ -6,6 +6,7 @@ import Utilities.URL_DATA
 import android.content.Context
 import android.util.Log
 import com.android.volley.Response
+import com.android.volley.Response.Listener
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -26,16 +27,19 @@ object UserService {
 
 
     var currentGW : Int = 0
+    var requestedGW : Int = 0
+
 
     fun findCurrentGameWeek(complete:(Boolean)-> Unit){
 
-        val gameWeekRequest = object: JsonArrayRequest(Method.GET, URL_DATA,null,Response.Listener {response ->
+        val gameWeekRequest = object: JsonArrayRequest(Method.GET, URL_DATA,null, Listener { response ->
             try{
                 for(x in 0 until response.length()){
                     val gameWeek = response.getJSONObject(x)
                     val isCurrent = gameWeek.getBoolean("is_current")
                     if (isCurrent){
                         currentGW = gameWeek.getInt("id")
+                        requestedGW = currentGW
                     }
                 }
                 println("current game week"+currentGW)
@@ -44,7 +48,9 @@ object UserService {
                 complete(false)
             }
 
-        },Response.ErrorListener {error ->
+        },Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })
@@ -59,7 +65,7 @@ object UserService {
     }
     fun findTeam(complete:(Boolean)-> Unit){
             val url = "https://fantasy.premierleague.com/drf/entry/"+ userId+"/event/"+ currentGW+"/picks"
-        val teamRequest = object: JsonObjectRequest(Method.GET, url,null,Response.Listener {response ->
+        val teamRequest = object: JsonObjectRequest(Method.GET, url,null, Listener { response ->
             try{
                 val picks = response.getJSONArray("picks")
 
@@ -84,7 +90,9 @@ object UserService {
                 complete(false)
             }
 
-        },Response.ErrorListener {error ->
+        },Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get gameWeek"+error)
             complete(false)
         })
@@ -99,18 +107,29 @@ object UserService {
     }
     fun findTeamPreSeason(complete:(Boolean)-> Unit){
 
-        val playersRequest3 = object: JsonObjectRequest(Method.GET, URL_DATA,null, Response.Listener { response ->
+        val playersRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Listener { response ->
             try{
+                var eventsObject = response.getJSONArray("events")
+                for (x in 0 until eventsObject.length()){
+                    if (eventsObject.getJSONObject(x).getBoolean("is_next")){
+                        currentGW = eventsObject.getJSONObject(x).getInt("id")
+                        requestedGW = currentGW
+
+                        break
+                    }
+                }
+                println("current game week"+ currentGW)
+                ///////////////////////////////////////////////////////////players
                 var playersObject = response.getJSONArray("elements")
                 for(x in 0 until playersId.size){
 
                     if (playersId[x] == 0){
-                        myPlayers.add(Player(0,"","",0,0,0,false,false,0.0,0.0,0,0,0,0,0,0,0,0,0,0))
+                        myPlayers.add(Player(0,"","",0,0,0,false,false,0.0,0.0,0,0,0,0,0,0,0,0,0,0,"",0))
                     }else{
                         for(y in 0 until playersObject.length()){
                             val player = playersObject.getJSONObject(y)
 
-                            if (playersId [x].equals(player.getInt("id"))){
+                            if (playersId [x] == player.getInt("id")){
                                 val webName = player.getString("web_name")
                                 val status = player.getString("status")
                                 val teamCode = player.getInt("team_code")
@@ -126,12 +145,23 @@ object UserService {
                                 val redCards = player.getInt("red_cards")
                                 val saves = player.getInt("saves")
                                 val bonus = player.getInt("bonus")
+                                val news = player.getString("news")
+                                var chance = 0
+                                if (news.equals("")){
+                                    chance = 100
+                                }else{
+                                    chance = player.getInt("chance_of_playing_next_round")
+
+                                }
+
+
+
 
                                 val cost = player.getInt("now_cost").toDouble()
                                 val percent = player.getDouble("selected_by_percent")
                                 val id = player.getInt("id")
                                 myPlayers.add(
-                                    Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus)
+                                    Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                                 )
 
@@ -148,6 +178,8 @@ object UserService {
             }
 
         }, Response.ErrorListener { error ->
+            DataService.networkErrorListener(error)
+
             Log.d("request error","couldn't get waziifa"+error)
             complete(false)
         })
@@ -157,7 +189,7 @@ object UserService {
             }
         }
 
-        App.prefs.requestQueue.add(playersRequest3)
+        App.prefs.requestQueue.add(playersRequest)
 
     }
 }
