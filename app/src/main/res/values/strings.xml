@@ -7,7 +7,7 @@
     <string name="edit_team">Edit Team</string>
     <string name="fixtures">Fixtures</string>
     <string name="statistics">Statistics</string>
-    <string name="leagues">Leagues</string>
+    <string name="rivals">Rivals</string>
     <string-array name="viewDrop">
         <item>All Players</item>
         <item>GoalKeepers</item>

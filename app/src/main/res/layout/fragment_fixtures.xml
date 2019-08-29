@@ -14,7 +14,7 @@
         <Button
                 android:text="GameWeek 1"
                 android:layout_height="wrap_content"
-                android:id="@+id/gWFixturetext"
+                android:id="@+id/gWPointstext"
                 app:layout_constraintTop_toTopOf="parent"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:background="@android:color/background_light"
@@ -28,7 +28,7 @@
                 android:id="@+id/nextGWFixtureBtn"
                 style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:background="@android:color/background_light"
-                app:layout_constraintStart_toEndOf="@+id/gWFixturetext"
+                app:layout_constraintStart_toEndOf="@+id/gWPointstext"
                 app:layout_constraintHorizontal_bias="0.5" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
         />
@@ -40,7 +40,7 @@
                 style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
                 android:background="@android:color/background_light"
                 app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintEnd_toStartOf="@+id/gWFixturetext"
+                app:layout_constraintEnd_toStartOf="@+id/gWPointstext"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>

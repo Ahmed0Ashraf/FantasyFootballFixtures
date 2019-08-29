@@ -33,13 +33,19 @@ object FixturesService {
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
                         var kickOff = response.getJSONObject(x).getString("kickoff_time")
                         var started = response.getJSONObject(x).getBoolean("started")
+                        var homeScore = 0
+                        var awayScore = 0
+                        if(started){
+                            homeScore = response.getJSONObject(x).getInt("team_h_score")
+                            awayScore = response.getJSONObject(x).getInt("team_a_score")
+                        }
 
                         var date = returnDateString(kickOff)
                         var time = returnTimeString(kickOff)
 
 
-                        gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started))
-                        fixtures.add(Fixture(homeTeam, awayTeam,date, time, started))
+                        gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
+                        fixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
 
                     }
@@ -78,12 +84,17 @@ object FixturesService {
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
                         var kickOff = response.getJSONObject(x).getString("kickoff_time")
                         var started = response.getJSONObject(x).getBoolean("started")
-
+                        var homeScore = 0
+                        var awayScore = 0
+                        if(started){
+                            homeScore = response.getJSONObject(x).getInt("team_h_score")
+                            awayScore = response.getJSONObject(x).getInt("team_a_score")
+                        }
                         var date = returnDateString(kickOff)
                         var time = returnTimeString(kickOff)
 
 
-                        gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started))
+                        gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
                     }
                 }
@@ -120,12 +131,17 @@ object FixturesService {
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
                         var kickOff = response.getJSONObject(x).getString("kickoff_time")
                         var started = response.getJSONObject(x).getBoolean("started")
-
+                        var homeScore = 0
+                        var awayScore = 0
+                        if(started){
+                            homeScore = response.getJSONObject(x).getInt("team_h_score")
+                            awayScore = response.getJSONObject(x).getInt("team_a_score")
+                        }
                         var date = returnDateString(kickOff)
                         var time = returnTimeString(kickOff)
 
 
-                        fixtures.add(Fixture(homeTeam, awayTeam,date, time, started))
+                        fixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
                     }
                 }

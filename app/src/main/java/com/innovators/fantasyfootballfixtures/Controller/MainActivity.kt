@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     var pointsFragment = PointsFragment()
     var fixturesFragment = FixturesFragment()
     var teamFragment = TeamFragment()
-    var leaguesFragment = LeaguesFragment()
+    var rivalsFragment = RivalsFragment()
 
 
 
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.navigation_Leagues -> {
-                supportFragmentManager.beginTransaction().hide(active).show(leaguesFragment).commit()
-                active = leaguesFragment
+                supportFragmentManager.beginTransaction().hide(active).show(rivalsFragment).commit()
+                active = rivalsFragment
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
         //navigation.selectedItemId = R.id.navigation_Team
 
-        supportFragmentManager.beginTransaction().add(R.id.newcont,leaguesFragment).hide(leaguesFragment).commit()
+        supportFragmentManager.beginTransaction().add(R.id.newcont,rivalsFragment).hide(rivalsFragment).commit()
 
         supportFragmentManager.beginTransaction().add(R.id.newcont,fixturesFragment).hide(fixturesFragment).commit()
         supportFragmentManager.beginTransaction().add(R.id.newcont,teamFragment).hide(teamFragment).commit()

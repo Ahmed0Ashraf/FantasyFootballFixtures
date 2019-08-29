@@ -46,7 +46,7 @@ class TeamFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        gWFixturetext.text = "Gameweek "+UserService.currentGW
+        gWPointstext.text = "Gameweek "+UserService.currentGW
 
 
         tshirtImages = arrayListOf(gk1teamimagebtn,gk2teamimagebtn,def1teamimagebtn,def2teamimagebtn,def3teamimagebtn,def4teamimagebtn,def5teamimagebtn,
@@ -58,13 +58,15 @@ class TeamFragment : Fragment() {
         teamOpps = arrayListOf(gk1teamopp,gk2teamopp,def1teamopp,def2teamopp,def3teamopp,def4teamopp,def5teamopp,mid1teamopp,mid2teamopp,mid3teamopp,mid4teamopp,mid5teamopp,
             fwd1teamopp,fwd2teamopp,fwd3teamopp)
 
-        for (x in 0 until 15){
+        for (x in 0 until playerNames.size){
             if (UserService.myPlayers[x].id != 0){
                 //////////error
                 playerNames[x].text = UserService.myPlayers[x].name
+                ////////////image
                 var imageShortName = TeamsService.findTeamName(UserService.myPlayers[x]!!.teamCode).toLowerCase().replace(" ","")
                 val resourceId = this.resources.getIdentifier(imageShortName,"drawable",activity?.packageName)
                 tshirtImages[x]?.setImageResource(resourceId)
+
                 var teamId = TeamsService.findTeamidByCode(UserService.myPlayers[x].teamCode)
 
                 for (y in 0 until FixturesService.gwFixtures.size){
@@ -123,7 +125,7 @@ class TeamFragment : Fragment() {
 
                 FixturesService.findRequestedGWFixturesTeam{gWSuccess ->
                     if (gWSuccess){
-                        gWFixturetext.text = "Gameweek "+UserService.requestedGW
+                        gWPointstext.text = "Gameweek "+UserService.requestedGW
 
                         for (x in 0 until UserService.myPlayers.size){
                             if (UserService.myPlayers[x].id != 0){
@@ -171,7 +173,7 @@ class TeamFragment : Fragment() {
                 FixturesService.findRequestedGWFixturesTeam{gWSuccess ->
                     if (gWSuccess){
 
-                        gWFixturetext.text = "Gameweek "+UserService.requestedGW
+                        gWPointstext.text = "Gameweek "+UserService.requestedGW
 
                         for (x in 0 until UserService.myPlayers.size){
                             if (UserService.myPlayers[x].id != 0){
@@ -243,7 +245,7 @@ class TeamFragment : Fragment() {
             }
 
             UserService.myPlayers[index] = player!!
-            var ids = ""
+            /*var ids = ""
             for (x in 0 until UserService.myPlayers.size){
                 if (x == 14){
                     ids += UserService.myPlayers[x].id
@@ -253,8 +255,8 @@ class TeamFragment : Fragment() {
                     ids += "-"
 
                 }
-            }
-            App.prefs.playerIds = ids
+            }*/
+            //App.prefs.playerIds = ids
 
         }
     }

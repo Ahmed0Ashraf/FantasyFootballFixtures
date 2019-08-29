@@ -15,22 +15,25 @@ import java.lang.annotation.ElementType
 import java.text.FieldPosition
 
 object PlayerService {
-    var players = arrayListOf<Player>()
+   // var players = arrayListOf<Player>()
     var searchedPlayers= arrayListOf<Player>()
+    var myPlayersPoints= arrayListOf<Player>()
+
     var selectedColumn = "Selected By"
 
 
 
     fun getAllPlayers(complete:(Boolean)-> Unit){
 
-        val playersRequest = object: JsonArrayRequest(Method.GET, URL_DATA,null, Listener { response ->
+        val playersRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Listener { response ->
             try{
-                for(x in 0 until 14){
+                var playersArray = response.getJSONArray("elements")
+                for(x in 0 until UserService.playersId.size){
                     val id = UserService.playersId[x]
-                    for(y in 0 until response.length()){
-                        val player = response.getJSONObject(y)
+                    for(y in 0 until playersArray.length()){
+                        val player = playersArray.getJSONObject(y)
                         val searchedId = player.getInt("id")
-                        if(id.equals(searchedId)){
+                        if(id == searchedId){
                             val webName = player.getString("web_name")
                             val status = player.getString("status")
                             val teamCode = player.getInt("team_code")
@@ -54,14 +57,10 @@ object PlayerService {
                                 chance = player.getInt("chance_of_playing_next_round")
 
                             }
-
-
-
                             val cost = player.getInt("now_cost").toDouble()
-
                             val percent = player.getDouble("selected_by_percent")
 
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
+                            UserService.myPlayers.add(Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance))
 
                             break
                         }
@@ -69,16 +68,14 @@ object PlayerService {
 
                 }
 
-                players[UserService.captianIndex].isCaptian = true
-                players[UserService.viceCaptianIndex].isViceCaptian = true
+                UserService.myPlayers[UserService.captianIndex].isCaptian = true
+                UserService.myPlayers[UserService.viceCaptianIndex].isViceCaptian = true
 
+                ///////////points array
+                myPlayersPoints.addAll( UserService.myPlayers)
+                UserService.myPlayers.sortBy { selectorPosition(it) }
 
-                for(x in 0 until 14) {
-                    println(players[x].name)
-                    println(players[x].lastPoints)
-
-                }
-                    complete(true)
+                 complete(true)
             }catch (e: JSONException){
                 complete(false)
             }
@@ -298,6 +295,8 @@ object PlayerService {
         App.prefs.requestQueue.add(searchRequest)
 
     }
+
+    fun selectorPosition(p: Player): Int = p.elementType
 
     fun positionToString(elementType: Int):String{
 

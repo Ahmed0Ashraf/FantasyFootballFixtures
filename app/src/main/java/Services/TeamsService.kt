@@ -60,6 +60,7 @@ object TeamsService {
         val teamRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Response.Listener { response ->
             try{
                 var teamsObject = response.getJSONArray("teams")
+                println("team koss")
 
                 for(x in 0 until teamsObject.length()){
                     val team = teamsObject.getJSONObject(x)

@@ -13,129 +13,56 @@
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainSub4ImageView"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"
-            android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
-    <TextView
-            android:text="C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/caprianSub4TextView" android:fontFamily="@font/muli_bold"
-            android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
-    <ImageView
-            app:srcCompat="@drawable/ic_brightness_1_black_24dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/captainSub3ImageView"
-            app:layout_constraintStart_toStartOf="@+id/guideline8"
-            android:layout_marginStart="52dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"/>
-    <TextView
-            android:text="C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/caprianSub3TextView" android:fontFamily="@font/muli_bold"
-            android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
-    <ImageView
-            app:srcCompat="@drawable/ic_brightness_1_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/captainSub2ImageView"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"
-            app:layout_constraintStart_toStartOf="@+id/guideline7" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
-    <TextView
-            android:text="C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/caprianSub2TextView" android:fontFamily="@font/muli_bold"
-            android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
-    <ImageView
-            app:srcCompat="@drawable/ic_brightness_1_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/captainSub1ImageView"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="52dp" android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19" app:layout_constraintEnd_toStartOf="@+id/guideline6"
-    />
-    <TextView
-            android:text="C"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/caprianSub1TextView" android:fontFamily="@font/muli_bold"
-            android:textColor="@android:color/background_light"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline19"/>
-    <ImageView
-            app:srcCompat="@drawable/ic_brightness_1_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/captainFwd3ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianFwd3TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianFwd3TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            android:visibility="invisible" tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainFwd2ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
-            app:layout_constraintStart_toStartOf="@+id/guideline7" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianFwd2TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianFwd2TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline17" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainFwd1ImageView"
-            app:layout_constraintStart_toStartOf="@+id/guideline6"
-            android:layout_marginStart="52dp" app:layout_constraintEnd_toStartOf="@+id/guideline7"
-            android:layout_marginBottom="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline17"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintBottom_toTopOf="@+id/guideline17" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianFwd1TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianFwd1TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline17"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline17" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Milner"
             android:layout_width="0dp"
@@ -185,7 +112,7 @@
             app:layout_constraintStart_toEndOf="@+id/guideline9" android:layout_marginEnd="2dp"
             android:layout_marginStart="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/westham"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/sub4imagebtn"
@@ -225,7 +152,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/westham"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/sub3imagebtn"
@@ -265,7 +192,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/westham"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/sub2imagebtn"
@@ -305,7 +232,7 @@
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/westham"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/sub1imagebtn"
@@ -324,7 +251,8 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintStart_toEndOf="@+id/guideline8"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Aubamyang"
             android:layout_width="0dp"
@@ -343,9 +271,9 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
             app:layout_constraintEnd_toStartOf="@+id/guideline9"
             app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/leicester"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/fwd3imagebtn"
@@ -354,7 +282,8 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
             app:layout_constraintStart_toEndOf="@+id/guideline8"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -364,7 +293,8 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Robertson"
             android:layout_width="0dp"
@@ -383,9 +313,9 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/leicester"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/fwd2imagebtn"
@@ -394,17 +324,19 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/fwdpoints"
+            android:id="@+id/fwd1points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@+id/guideline16"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Salah"
             android:layout_width="0dp"
@@ -416,16 +348,16 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:gravity="center"
-            android:id="@+id/fwdtextview"
+            android:id="@+id/fwd1textview"
             android:textAlignment="center"
             android:textColor="@android:color/background_light"
             app:layout_constraintTop_toBottomOf="@+id/guideline17"
             app:layout_constraintBottom_toTopOf="@+id/guideline16"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
             app:layout_constraintEnd_toStartOf="@+id/guideline7" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/leicester"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/fwd1imagebtn"
@@ -434,7 +366,8 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline4"
             app:layout_constraintBottom_toTopOf="@+id/guideline17"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -444,7 +377,8 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/guideline14"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Wijnaldum"
             android:layout_width="0dp"
@@ -463,9 +397,9 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/guideline9" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mid5imagebtn"
@@ -474,25 +408,25 @@
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline9"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainMid5ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintStart_toStartOf="@+id/guideline9" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianMid5TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianMid5TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -523,7 +457,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mid4imagebtn"
@@ -538,19 +472,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainMid4ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianMid4TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianMid4TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -560,7 +494,8 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/guideline14"
             app:layout_constraintStart_toEndOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Lallana"
             android:layout_width="0dp"
@@ -579,9 +514,9 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintStart_toEndOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mid3imagebtn"
@@ -590,25 +525,26 @@
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
             app:layout_constraintStart_toEndOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainMid3ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
             app:layout_constraintEnd_toStartOf="@+id/guideline8"
-            app:layout_constraintStart_toStartOf="@+id/guideline7" android:layout_marginStart="52dp"/>
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianMid3TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianMid3TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -638,7 +574,7 @@
             app:layout_constraintVertical_bias="0.0"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mid2imagebtn"
@@ -654,29 +590,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainMid2ImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15"
-            app:layout_constraintStart_toStartOf="@+id/guideline6" app:layout_constraintEnd_toStartOf="@+id/guideline7"
-            android:layout_marginStart="52dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianMid2TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianMid2TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/mid1poits"
+            android:id="@+id/mid1points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/guideline14"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Henderson"
             android:layout_width="0dp"
@@ -694,7 +631,7 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline15"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -703,7 +640,8 @@
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintStart_toEndOf="@+id/guideline9"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.388"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.388"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="Robertson"
             android:layout_width="0dp"
@@ -721,9 +659,10 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline13"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
             app:layout_constraintStart_toEndOf="@+id/guideline9"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="2dp" android:layout_marginEnd="2dp"
+            android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def5imagebtn"
@@ -731,25 +670,26 @@
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             app:layout_constraintStart_toStartOf="@+id/guideline9"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline2" app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="invisible" tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainDef5ImageView" android:layout_marginBottom="5dp"
+            android:id="@+id/captainDef5ImageView"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            app:layout_constraintStart_toStartOf="@+id/guideline9" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent" android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianDef5TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianDef5TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_marginBottom="4dp" app:layout_constraintBottom_toTopOf="@+id/guideline13"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:visibility="invisible"
+            tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/mancity"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/gk1imagebtn"
@@ -765,24 +705,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainGkImageView"
-            android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
-            app:layout_constraintStart_toStartOf="@+id/guideline7"
-            android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianGkTextView"
+            android:id="@+id/captianGkTextView"
             android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:layout_marginBottom="4dp"
+            android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/leicester"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/mid1imagebtn"
@@ -791,25 +729,24 @@
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/guideline15"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintVertical_bias="1.0"/>
+            app:layout_constraintVertical_bias="1.0" android:visibility="invisible" tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/captainMid1ImageView"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="52dp" android:layout_marginBottom="5dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15" app:layout_constraintEnd_toStartOf="@+id/guideline6"
-    />
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianMid1TextView" android:fontFamily="@font/muli_bold"
+            android:id="@+id/captianMid1TextView" android:fontFamily="@font/muli_bold"
             android:textColor="@android:color/background_light"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline15" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -839,7 +776,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline9" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def4imagebtn"
@@ -853,19 +790,20 @@
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainDef4ImageView" android:layout_marginBottom="5dp"
+            android:id="@+id/captainDef4ImageView"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            app:layout_constraintStart_toStartOf="@+id/guideline8" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline9" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianDef4TextView" android:fontFamily="@font/muli_bold"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/captianDef4TextView" android:fontFamily="@font/muli_bold"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             android:textColor="@android:color/background_light"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline9"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
@@ -874,7 +812,8 @@
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintStart_toEndOf="@+id/guideline7"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -892,9 +831,9 @@
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintBottom_toTopOf="@+id/guideline12"
             app:layout_constraintEnd_toStartOf="@+id/guideline8" android:text="Matip" android:layout_marginStart="2dp"
-            android:layout_marginEnd="2dp"/>
+            android:layout_marginEnd="2dp" android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def3imagebtn"
@@ -903,34 +842,37 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintTop_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <ImageView
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainDef3ImageView" android:layout_marginBottom="5dp"
+            android:id="@+id/captainDef3ImageView"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            app:layout_constraintStart_toStartOf="@+id/guideline7" android:layout_marginStart="52dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline8" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianDef3TextView" android:fontFamily="@font/muli_bold"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/captianDef3TextView" android:fontFamily="@font/muli_bold"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             android:textColor="@android:color/background_light"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline8"/>
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/guideline8"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/def1points2"
+            android:id="@+id/def1points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="@+id/guideline12"/>
+            app:layout_constraintTop_toTopOf="@+id/guideline12" android:visibility="invisible"
+            tools:visibility="visible"/>
     <TextView
             android:text="Azplequita"
             android:layout_width="0dp"
@@ -950,7 +892,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline6" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/norwich"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def2imagebtn"
@@ -964,27 +906,27 @@
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainDef2ImageView" android:layout_marginBottom="5dp"
+            android:id="@+id/captainDef2ImageView"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
-            app:layout_constraintEnd_toStartOf="@+id/guideline7" app:layout_constraintStart_toStartOf="@+id/guideline6"
-            android:layout_marginStart="52dp"/>
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianDef2TextView" android:fontFamily="@font/muli_bold"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/captianDef2TextView" android:fontFamily="@font/muli_bold"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             android:textColor="@android:color/background_light" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
-    />
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="5"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def2points"
             android:textColor="@android:color/background_light" android:textAlignment="center"
-            app:layout_constraintStart_toEndOf="@+id/def1points2"
+            app:layout_constraintStart_toEndOf="@+id/def1points"
             app:layout_constraintTop_toTopOf="@+id/guideline12" app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"/>
     <TextView
@@ -1005,9 +947,9 @@
             app:layout_constraintTop_toBottomOf="@+id/guideline13"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp" app:layout_constraintBottom_toTopOf="@+id/guideline12"
-    />
+            android:visibility="invisible" tools:visibility="visible"/>
     <ImageButton
-            android:src="@drawable/player"
+            android:src="@drawable/spurs"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:id="@+id/def1imagebtn"
@@ -1016,60 +958,65 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintBottom_toTopOf="@+id/guideline13" app:layout_constraintTop_toTopOf="@+id/guideline2"
             app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintHorizontal_bias="0.0" android:visibility="invisible" tools:visibility="visible"/>
     <Button
-            android:text="Points 53"
-            android:layout_width="133dp"
-            android:layout_height="0dp"
-            android:id="@+id/button4" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/Widget.AppCompat.Button.Borderless" android:background="@android:color/background_light"
-            app:layout_constraintBottom_toTopOf="@+id/guideline" android:layout_marginBottom="2dp"
-            android:layout_marginStart="4dp"/>
+            android:text="@string/points"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/pointsBtn"
+            style="@style/Widget.AppCompat.Button.Borderless" android:background="@drawable/rounded_btn"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:paddingBottom="24dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guideline11"/>
     <Button
             android:text="GameWeek 1"
-            android:layout_width="142dp"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/gWFixturetext"
+            android:id="@+id/gWPointstext"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/nextGWFixtureBtn"
             app:layout_constraintBottom_toTopOf="@+id/guideline" style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/background_light" android:layout_marginBottom="2dp"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/previousGWFixtureBtn"/>
     <ImageButton
             app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
-            android:layout_width="33dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:id="@+id/nextGWFixtureBtn" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light" android:layout_marginBottom="2dp"
-            android:layout_marginEnd="4dp"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
+    />
     <ImageButton
             app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
-            android:layout_width="34dp"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:id="@+id/previousGWFixtureBtn" app:layout_constraintEnd_toStartOf="@+id/gWFixturetext"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/button4"
-            android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="1.0"
+            android:id="@+id/previousGWFixtureBtn"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light" android:layout_marginBottom="2dp"/>
+            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toStartOf="parent"
+    />
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.05"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.09"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline2"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.24"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.28"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline3"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.43"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.46"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline4"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.62"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.64"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline5"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.81"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.82"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline6"
                                           android:orientation="vertical" app:layout_constraintGuide_percent="0.2"/>
@@ -1085,11 +1032,11 @@
                                           android:orientation="vertical" app:layout_constraintGuide_percent="0.80"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline10"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.16"
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.2"
                                           android:background="@color/colorAccent"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline11"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.2"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.24"/>
     <TextView
             android:text="Cech"
             android:layout_width="0dp"
@@ -1120,22 +1067,22 @@
             android:textColor="@android:color/background_light" android:textAlignment="center"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline12"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.39"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.42"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline13"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.35"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.38"/>
     <android.support.constraint.Guideline android:layout_width="0dp" android:layout_height="0dp"
                                           android:id="@+id/guideline14"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.58"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.6"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline15"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.54"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.56"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline16"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.77"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.78"/>
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline17"
-                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.73"/>
+                                          android:orientation="horizontal" app:layout_constraintGuide_percent="0.74"/>
     <android.support.constraint.Guideline android:layout_width="0dp" android:layout_height="0dp"
                                           android:id="@+id/guideline18"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.96"/>
@@ -1146,19 +1093,51 @@
             app:srcCompat="@drawable/ic_brightness_1_black_24dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/captainDef1ImageView" android:layout_marginBottom="5dp"
+            android:id="@+id/captainDef1ImageView"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="52dp"/>
+            android:visibility="invisible" tools:visibility="visible"/>
     <TextView
             android:text="C"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/caprianDef1TextView" android:fontFamily="@font/muli_bold"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/captianDef1TextView" android:fontFamily="@font/muli_bold"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline13"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            android:textColor="@android:color/background_light"/>
+            android:textColor="@android:color/background_light" android:visibility="invisible"
+            tools:visibility="visible"/>
+    <View
+            android:id="@+id/divider15"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@android:color/background_dark"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.727" app:layout_constraintStart_toEndOf="@+id/previousGWFixtureBtn"
+    />
+    <View
+            android:id="@+id/divider16"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@android:color/background_dark"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.727"
+            app:layout_constraintStart_toStartOf="@+id/nextGWFixtureBtn"/>
+    <TextView
+            android:text="888"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pointsText"
+            app:layout_constraintStart_toStartOf="@+id/pointsBtn" android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginEnd="16dp"
+            android:textColor="@android:color/background_dark" android:textStyle="bold|italic"
+            android:textAllCaps="true"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guideline11"/>
 </android.support.constraint.ConstraintLayout>

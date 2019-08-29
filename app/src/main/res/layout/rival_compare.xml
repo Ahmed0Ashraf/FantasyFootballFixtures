@@ -14,23 +14,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:textSize="14sp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView53"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/rivalRoundPoints"/>
     <TextView
             android:text="34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView52" app:layout_constraintEnd_toStartOf="@+id/guideline47"
-            android:layout_marginEnd="32dp"
+            android:id="@+id/myRoundPoints"
             android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
-            android:layout_marginTop="8dp" android:textColor="@color/colorPrimary"/>
+            android:layout_marginTop="8dp" android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/myTotalPoints"
+            app:layout_constraintEnd_toEndOf="@+id/myTotalPoints"/>
     <TextView
             android:text="00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView53" android:layout_marginStart="32dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            android:id="@+id/rivalRoundPoints"
             android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
-            android:layout_marginTop="8dp" android:textColor="@android:color/holo_red_dark"/>
+            android:layout_marginTop="8dp" android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="@+id/rivalTotalPoints"
+            app:layout_constraintStart_toStartOf="@+id/rivalTotalPoints"/>
     <TextView
             android:text="Round Points"
             android:layout_width="wrap_content"
@@ -39,22 +41,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:textSize="14sp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/textView49"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/myTotalPoints"/>
     <TextView
             android:text="1234"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView49" app:layout_constraintEnd_toStartOf="@+id/guideline47"
-            android:layout_marginEnd="12dp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
-            android:layout_marginTop="8dp" android:textSize="24sp" android:textColor="@color/colorPrimary"/>
+            android:id="@+id/myTotalPoints"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
+            android:layout_marginTop="8dp" android:textSize="24sp" android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/textView47" app:layout_constraintEnd_toEndOf="@+id/textView47"/>
     <TextView
             android:text="1200"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView50" android:layout_marginStart="32dp"
+            android:id="@+id/rivalTotalPoints"
             app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
-            app:layout_constraintStart_toStartOf="@+id/guideline47" android:layout_marginTop="8dp"
-            android:textSize="24sp" android:textColor="@android:color/holo_red_dark"/>
+            android:layout_marginTop="8dp"
+            android:textSize="24sp" android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="@+id/textView48" app:layout_constraintStart_toStartOf="@+id/textView48"/>
     <TextView
             android:text="Total Points"
             android:layout_width="wrap_content"
@@ -79,22 +83,24 @@
             android:text="34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView31" app:layout_constraintEnd_toStartOf="@+id/guideline47"
-            android:layout_marginEnd="32dp"
+            android:id="@+id/myProjectedBonus"
             android:textSize="24sp"
             app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="@+id/myRoundPoints"
+            app:layout_constraintEnd_toEndOf="@+id/myRoundPoints"/>
     <TextView
             android:text="00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView32" android:layout_marginStart="32dp"
-            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            android:id="@+id/rivalProjectedBonus"
             android:textSize="24sp"
             app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
-            android:textColor="@android:color/holo_red_dark"/>
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintStart_toStartOf="@+id/rivalRoundPoints"
+            app:layout_constraintEnd_toEndOf="@+id/rivalRoundPoints"/>
     <TextView
-            android:text="YOU"
+            android:text="You"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView47" app:layout_constraintTop_toTopOf="parent"
@@ -102,7 +108,7 @@
             android:textSize="18sp" android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline47" android:textColor="@color/colorPrimary"/>
     <TextView
-            android:text="HIM"
+            android:text="Rival"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView48" app:layout_constraintTop_toTopOf="parent"

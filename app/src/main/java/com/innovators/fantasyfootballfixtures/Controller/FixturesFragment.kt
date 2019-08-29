@@ -40,12 +40,13 @@ class FixturesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         fixtureInflator(this.context!!)
+        gWPointstext.text = "Gameweek "+UserService.currentGW
 
         nextGWFixtureBtn.setOnClickListener {
             if (DataService.checkInternetConncetion()) {
                 if (fixtureGW + 1 <= 38){
                     fixtureGW ++
-                    gWFixturetext.setText("Gameweek "+fixtureGW)
+                    gWPointstext.setText("Gameweek "+fixtureGW)
                     FixturesService.findRequestedGWFixtures(fixtureGW){gwFixtureSuccess ->
                         if (gwFixtureSuccess){
                             fixtureInflator(this.context!!)
@@ -62,9 +63,9 @@ class FixturesFragment : Fragment() {
         }
         previousGWFixtureBtn.setOnClickListener {
             if (DataService.checkInternetConncetion()) {
-                if (fixtureGW - 1 >= UserService.currentGW){
+                if (fixtureGW - 1 >= 1){
                     fixtureGW --
-                    gWFixturetext.setText("Gameweek "+fixtureGW)
+                    gWPointstext.setText("Gameweek "+fixtureGW)
                     FixturesService.findRequestedGWFixtures(fixtureGW){gwFixtureSuccess ->
                         if (gwFixtureSuccess){
                             fixtureInflator(this.context!!)
@@ -111,8 +112,13 @@ class FixturesFragment : Fragment() {
 
             homeText.setText(homeName)
             awayText.setText(awayName)
+            if(FixturesService.fixtures[i].started){
+                resultText.text = FixturesService.fixtures[i].homeScore.toString() + "-" + FixturesService.fixtures[i].awayScore.toString()
 
-            resultText.text = FixturesService.fixtures[i].time
+            }else{
+                resultText.text = FixturesService.fixtures[i].time
+
+            }
 
             fixtureLayout.addView(childlayout)
         }

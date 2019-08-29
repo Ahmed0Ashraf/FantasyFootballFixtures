@@ -16,7 +16,7 @@ class LoadingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loading)
         ///////////////////////////////////////////////
-        tryAgainBtn.setOnClickListener{
+        /*tryAgainBtn.setOnClickListener{
             loadingProgressBar.visibility = View.VISIBLE
 
             TeamsService.findTeams {teamsSuccess ->
@@ -76,7 +76,7 @@ class LoadingActivity : AppCompatActivity() {
 
          }
 
-        }
+        }*/
 
     }
 

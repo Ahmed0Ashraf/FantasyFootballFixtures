@@ -25,20 +25,25 @@ object UserService {
     var viceCaptianIndex = -1
     var multiplierIndex = -1
 
+    var points = 0
+    var totalPoints = 0
 
     var currentGW : Int = 0
+    var isFinished = false
     var requestedGW : Int = 0
 
 
     fun findCurrentGameWeek(complete:(Boolean)-> Unit){
 
-        val gameWeekRequest = object: JsonArrayRequest(Method.GET, URL_DATA,null, Listener { response ->
+        val gameWeekRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Listener { response ->
             try{
-                for(x in 0 until response.length()){
-                    val gameWeek = response.getJSONObject(x)
+                var events = response.getJSONArray("events")
+                for(x in 0 until events.length()){
+                    val gameWeek = events.getJSONObject(x)
                     val isCurrent = gameWeek.getBoolean("is_current")
                     if (isCurrent){
                         currentGW = gameWeek.getInt("id")
+                        isFinished = gameWeek.getBoolean("finished")
                         requestedGW = currentGW
                     }
                 }
@@ -64,9 +69,13 @@ object UserService {
 
     }
     fun findTeam(complete:(Boolean)-> Unit){
-            val url = "https://fantasy.premierleague.com/drf/entry/"+ userId+"/event/"+ currentGW+"/picks"
+            val url = "https://fantasy.premierleague.com/api/entry/"+ userId+"/event/"+ currentGW+"/picks/"
         val teamRequest = object: JsonObjectRequest(Method.GET, url,null, Listener { response ->
             try{
+                val entryHistory = response.getJSONObject("entry_history")
+                points = entryHistory.getInt("points")
+                totalPoints = entryHistory.getInt("total_points")
+
                 val picks = response.getJSONArray("picks")
 
                 for(x in 0 until picks.length()){
@@ -105,6 +114,7 @@ object UserService {
         App.prefs.requestQueue.add(teamRequest)
 
     }
+
     fun findTeamPreSeason(complete:(Boolean)-> Unit){
 
         val playersRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Listener { response ->

@@ -22,6 +22,11 @@
         <activity android:name=".Controller.LoginActivity"
                   android:configChanges="orientation"
                   android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".Controller.GainingIDAcitvity"
                   android:configChanges="orientation"
@@ -39,11 +44,7 @@
         <activity android:name=".Controller.LoadingActivity"
                   android:configChanges="orientation"
                   android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".Controller.PlayerStatsActivity"
                   android:configChanges="orientation"
