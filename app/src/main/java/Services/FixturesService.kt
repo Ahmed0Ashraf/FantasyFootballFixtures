@@ -22,13 +22,11 @@ object FixturesService {
 
     fun findGWFixtures(complete:(Boolean)-> Unit){
 
-        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES,null, Listener { response ->
+        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES+ UserService.currentGW ,null, Listener { response ->
             try{
-                gwFixtures.clear()
+                fixtures.clear()
 
                 for (x in 0 until response.length()){
-                    if (response.getJSONObject(x).getInt("event") == UserService.currentGW ){
-
                         var homeTeam = response.getJSONObject(x).getInt("team_h")
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
                         var kickOff = response.getJSONObject(x).getString("kickoff_time")
@@ -44,11 +42,10 @@ object FixturesService {
                         var time = returnTimeString(kickOff)
 
 
-                        gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
+                        //gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
                         fixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
 
-                    }
                 }
                 complete(true)
             }catch (e: JSONException){
@@ -73,12 +70,11 @@ object FixturesService {
 
     fun findRequestedGWFixturesTeam(complete:(Boolean)-> Unit){
 
-        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES,null, Listener { response ->
+        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES+UserService.requestedGW,null, Listener { response ->
             try{
                 gwFixtures.clear()
 
                 for (x in 0 until response.length()){
-                    if (response.getJSONObject(x).getInt("event") == UserService.requestedGW ){
 
                         var homeTeam = response.getJSONObject(x).getInt("team_h")
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
@@ -96,7 +92,6 @@ object FixturesService {
 
                         gwFixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
-                    }
                 }
                 complete(true)
             }catch (e: JSONException){
@@ -120,12 +115,11 @@ object FixturesService {
     }
     fun findRequestedGWFixtures(gw:Int,complete:(Boolean)-> Unit){
 
-        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES,null, Listener { response ->
+        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES+gw,null, Listener { response ->
             try{
                 fixtures.clear()
 
                 for (x in 0 until response.length()){
-                    if (response.getJSONObject(x).getInt("event") == gw ){
 
                         var homeTeam = response.getJSONObject(x).getInt("team_h")
                         var awayTeam = response.getJSONObject(x).getInt("team_a")
@@ -143,7 +137,6 @@ object FixturesService {
 
                         fixtures.add(Fixture(homeTeam, awayTeam,date, time, started,homeScore,awayScore))
 
-                    }
                 }
                 complete(true)
             }catch (e: JSONException){

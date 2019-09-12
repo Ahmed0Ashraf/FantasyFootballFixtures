@@ -46,7 +46,7 @@ class TeamFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        gWPointstext.text = "Gameweek "+UserService.currentGW
+        gWPointstext.text = "Gameweek "+UserService.requestedGW
 
 
         tshirtImages = arrayListOf(gk1teamimagebtn,gk2teamimagebtn,def1teamimagebtn,def2teamimagebtn,def3teamimagebtn,def4teamimagebtn,def5teamimagebtn,
@@ -167,7 +167,7 @@ class TeamFragment : Fragment() {
 
         }
         previousGWFixtureBtn.setOnClickListener {
-            if (UserService.requestedGW - 1 >= UserService.currentGW){
+            if (UserService.requestedGW - 1 >= UserService.currentGW+1){
                 UserService.requestedGW --
 
                 FixturesService.findRequestedGWFixturesTeam{gWSuccess ->

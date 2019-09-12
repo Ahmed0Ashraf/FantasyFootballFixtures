@@ -1,26 +1,25 @@
 package com.innovators.fantasyfootballfixtures.Controller
 
 
-import Services.RivalsService
-import Services.UserService
+import Model.LiveFixture
+import Services.*
+import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 import com.innovators.fantasyfootballfixtures.R
-import kotlinx.android.synthetic.main.fragment_fixtures.*
 import kotlinx.android.synthetic.main.fragment_rivals.*
 import kotlinx.android.synthetic.main.rival_compare.*
+import kotlinx.android.synthetic.main.rivals_header.*
 import java.util.ArrayList
-import android.widget.ArrayAdapter
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,6 +34,7 @@ private const val ARG_PARAM2 = "param2"
 class RivalsFragment : Fragment() {
     var rivalsIds = arrayListOf<String>()
     var spinnerArray = arrayListOf<String>()
+    var infoHidden = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +46,21 @@ class RivalsFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+       // App.prefs.rivalsIds = ""
+
         if (App.prefs.rivalsIds.isEmpty()){
+            infoHidden = true
+            chooseRivalText.visibility = View.INVISIBLE
+            //rivalDropIds.visibility = View.GONE
+            rivalTeamName.visibility = View.INVISIBLE
+            lineUpText.visibility = View.INVISIBLE
+            subsText.visibility = View.INVISIBLE
+            rivalDivider1.visibility = View.INVISIBLE
+            rivalDividerBot.visibility = View.INVISIBLE
+            rivalDividerMid.visibility = View.INVISIBLE
+            rivalDividerRightBot.visibility = View.INVISIBLE
+            rivalDividerLeftBot.visibility = View.INVISIBLE
+            include.visibility = View.INVISIBLE
         }else{
             var idsArray = App.prefs.rivalsIds.split("-").toTypedArray()
             rivalsIds = idsArray.toCollection(ArrayList())
@@ -65,10 +79,117 @@ class RivalsFragment : Fragment() {
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         rivalDropIds.adapter = adapter
+
+        rivalDropIds.onItemSelectedListener = object : AdapterView.OnItemClickListener, AdapterView.OnItemSelectedListener{
+            override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                println("zzzzzzz")
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+                var rivalPosition = RivalsService.rivalsInfo.size -1 -position
+                rivalTeamName.text =  RivalsService.rivalsInfo[rivalPosition].teamName
+                RivalsService.findRivalTeam(RivalsService.rivalsInfo[rivalPosition].id){success ->
+                    if (success){
+                        RivalsService.findRivalsPlayerInfo{infoSuccess ->
+                            if (infoSuccess){
+                                rivalInflator()
+                                if ( infoHidden){
+                                    chooseRivalText.visibility = View.VISIBLE
+                                    //rivalDropIds.visibility = View.VISIBLE
+                                    rivalTeamName.visibility = View.VISIBLE
+                                    lineUpText.visibility = View.VISIBLE
+                                    subsText.visibility = View.VISIBLE
+                                    rivalDivider1.visibility = View.VISIBLE
+                                    rivalDividerBot.visibility = View.VISIBLE
+                                    rivalDividerMid.visibility = View.VISIBLE
+                                    rivalDividerRightBot.visibility = View.VISIBLE
+                                    rivalDividerLeftBot.visibility = View.VISIBLE
+                                    include.visibility = View.VISIBLE
+
+                                    linearLayoutLineUp.visibility = View.VISIBLE
+                                    linearLayoutSubs.visibility = View.VISIBLE
+                                    rivalComparison.visibility = View.VISIBLE
+                                    infoHidden = false
+                                }
+                                    if (LiveService.weekFinished){
+                                        BonusService.calculateRivalFinishedBonus()
+                                    }else{
+
+                                    }
+                                myTotalPoints.text = UserService.totalPoints.toString()
+                                rivalTotalPoints.text = RivalsService.rivalTotalPoints.toString()
+                                myRoundPoints.text = UserService.points.toString()
+                                rivalRoundPoints.text = RivalsService.rivalPoints.toString()
+                                myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
+                                rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
         RivalsService.requestedRivalGameWeek = UserService.currentGW
 
+        deleteRivalBtn.setOnClickListener{
+            var rivalPositionSpinner = rivalDropIds.selectedItemPosition
+            var rivalArrayPosition = RivalsService.rivalsInfo.size -1 -rivalPositionSpinner
+            spinnerArray.removeAt(rivalPositionSpinner)
+            RivalsService.rivalsInfo.removeAt(rivalArrayPosition)
+            var rivalsPrefs = ""
+            for (x in 0 until RivalsService.rivalsInfo.size){
+                if (x == 0){
+                    rivalsPrefs += RivalsService.rivalsInfo[x].id
+                }else{
+                    rivalsPrefs += "-"
+
+                    rivalsPrefs += RivalsService.rivalsInfo[x].id
+                }
+            }
+            App.prefs.rivalsIds = rivalsPrefs
+            infoHidden = true
+            rivalTeamName.visibility = View.INVISIBLE
+            lineUpText.visibility = View.INVISIBLE
+            subsText.visibility = View.INVISIBLE
+            rivalDivider1.visibility = View.INVISIBLE
+            rivalDividerBot.visibility = View.INVISIBLE
+            rivalDividerMid.visibility = View.INVISIBLE
+            rivalDividerRightBot.visibility = View.INVISIBLE
+            rivalDividerLeftBot.visibility = View.INVISIBLE
+            include.visibility = View.INVISIBLE
+            linearLayoutLineUp.visibility = View.INVISIBLE
+            linearLayoutSubs.visibility = View.INVISIBLE
+            rivalComparison.visibility = View.INVISIBLE
+
+        }
         rivalAddBtn.setOnClickListener{
             //App.prefs.rivalsIds = ""
+            if (App.prefs.rivalsIds.isEmpty() || infoHidden){
+                chooseRivalText.visibility = View.VISIBLE
+                //rivalDropIds.visibility = View.VISIBLE
+                rivalTeamName.visibility = View.VISIBLE
+                lineUpText.visibility = View.VISIBLE
+                subsText.visibility = View.VISIBLE
+                rivalDivider1.visibility = View.VISIBLE
+                rivalDividerBot.visibility = View.VISIBLE
+                rivalDividerMid.visibility = View.VISIBLE
+                rivalDividerRightBot.visibility = View.VISIBLE
+                rivalDividerLeftBot.visibility = View.VISIBLE
+                include.visibility = View.VISIBLE
+                linearLayoutLineUp.visibility = View.VISIBLE
+                linearLayoutSubs.visibility = View.VISIBLE
+                rivalComparison.visibility = View.VISIBLE
+                infoHidden = false
+            }
             var rivalsArray = rivalsIds.toArray()
            if (rivalEditText.text.isEmpty()){
                Toast.makeText(context,"Please Enter Rival's ID",Toast.LENGTH_LONG).show()
@@ -99,10 +220,17 @@ class RivalsFragment : Fragment() {
                                RivalsService.findRivalsPlayerInfo{infoSuccess ->
                                    if (infoSuccess){
                                        rivalInflator()
+                                       if (LiveService.weekFinished){
+                                           BonusService.calculateRivalFinishedBonus()
+                                       }else{
+
+                                       }
                                        myTotalPoints.text = UserService.totalPoints.toString()
                                        rivalTotalPoints.text = RivalsService.rivalTotalPoints.toString()
                                        myRoundPoints.text = UserService.points.toString()
                                        rivalRoundPoints.text = RivalsService.rivalPoints.toString()
+                                       myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
+                                       rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
 
                                    }
                                }
@@ -114,11 +242,24 @@ class RivalsFragment : Fragment() {
 
            }
         }
+
+
+        playerConditionBtn.setOnClickListener {
+            val builder = AlertDialog.Builder(activity)
+            val dialogView = layoutInflater.inflate(R.layout.player_condition_dialog,null)
+
+            builder.setView(dialogView)
+
+                .show()
+
+        }
+
     }
 
     fun rivalInflator(){
         linearLayoutLineUp.removeAllViews()
         linearLayoutSubs.removeAllViews()
+
         for (x in 0 until 11){
             var childlayout = LayoutInflater.from(context).inflate(R.layout.rivals, linearLayoutLineUp, false)
             val rivalNameText = childlayout.findViewById<View>(R.id.rivalPlayerName) as TextView
@@ -127,6 +268,22 @@ class RivalsFragment : Fragment() {
 
             rivalNameText.text = RivalsService.rivalPlayers[x].name
             rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode))))
+
+            rivalPlayerStatsBtn?.setOnClickListener {
+                if (DataService.checkInternetConncetion()) {
+                    StatsService.findPlayerStats(RivalsService.rivalPlayers[x].id){ statsSuccess ->
+                        if (statsSuccess){
+                            val statsIntent = Intent(context,PlayerStatsActivity::class.java)
+                            statsIntent.putExtra("player",RivalsService.rivalPlayers[x])
+                            startActivity(statsIntent)
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(App.appContext,"Connecntion Problems Please Try Again", Toast.LENGTH_LONG).show()
+                }
+            }
 
             linearLayoutLineUp.addView(childlayout)
 
@@ -139,8 +296,23 @@ class RivalsFragment : Fragment() {
             val rivalPlayerStatsBtn =childlayout.findViewById<View>(R.id.rivalPlayerStatsBtn) as ImageButton
 
             rivalNameText.text = RivalsService.rivalPlayers[x].name
-            rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode))))
 
+            rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            rivalPlayerStatsBtn?.setOnClickListener {
+                if (DataService.checkInternetConncetion()) {
+                    StatsService.findPlayerStats(RivalsService.rivalPlayers[x].id){ statsSuccess ->
+                        if (statsSuccess){
+                            val statsIntent = Intent(context,PlayerStatsActivity::class.java)
+                            statsIntent.putExtra("player",RivalsService.rivalPlayers[x])
+                            startActivity(statsIntent)
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(App.appContext,"Connecntion Problems Please Try Again", Toast.LENGTH_LONG).show()
+                }
+            }
             linearLayoutSubs.addView(childlayout)
 
 
@@ -151,6 +323,24 @@ class RivalsFragment : Fragment() {
         if (inputManager.isAcceptingText){
             inputManager.hideSoftInputFromWindow(activity!!.currentFocus.windowToken,0)
         }
+    }
+
+    fun teamCondition(teamid:Int):String{
+        for (x in 0 until LiveService.fixtures.size){
+            if (teamid == LiveService.fixtures[x].homeTeam || teamid == LiveService.fixtures[x].awayTeam){
+                if ( LiveService.fixtures[x].finishedProvisional){
+                    return "#000000"
+                }else if ( !LiveService.fixtures[x].started){
+                    return "#CE0001"
+                }else if ( LiveService.fixtures[x].started && !LiveService.fixtures[x].finished ){
+                    return "#00AE55"
+                }else{
+                    return "#889487"
+                }
+            }
+
+        }
+        return ""
     }
 
 

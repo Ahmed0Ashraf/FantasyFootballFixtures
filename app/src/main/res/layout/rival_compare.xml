@@ -1,118 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto"
-                                             xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_width="match_parent"
-                                             android:layout_height="wrap_content"
-                                             android:background="@android:color/darker_gray">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray">
 
     <TextView
-            android:text="Projected Bonus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/leagueTextView3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/rivalRoundPoints"/>
-    <TextView
-            android:text="34"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/myRoundPoints"
-            android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
-            android:layout_marginTop="8dp" android:textColor="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/myTotalPoints"
-            app:layout_constraintEnd_toEndOf="@+id/myTotalPoints"/>
-    <TextView
-            android:text="00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rivalRoundPoints"
-            android:textSize="24sp" app:layout_constraintTop_toBottomOf="@+id/leagueTextView2"
-            android:layout_marginTop="8dp" android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintEnd_toEndOf="@+id/rivalTotalPoints"
-            app:layout_constraintStart_toStartOf="@+id/rivalTotalPoints"/>
-    <TextView
-            android:text="Round Points"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/leagueTextView2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/myTotalPoints"/>
-    <TextView
-            android:text="1234"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/myTotalPoints"
-            app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
-            android:layout_marginTop="8dp" android:textSize="24sp" android:textColor="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/textView47" app:layout_constraintEnd_toEndOf="@+id/textView47"/>
-    <TextView
-            android:text="1200"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rivalTotalPoints"
-            app:layout_constraintTop_toBottomOf="@+id/leagueTextView"
             android:layout_marginTop="8dp"
-            android:textSize="24sp" android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintEnd_toEndOf="@+id/textView48" app:layout_constraintStart_toStartOf="@+id/textView48"/>
+            android:text="Live Points + Bonus"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rivalRoundPoints" />
+
     <TextView
-            android:text="Total Points"
+            android:id="@+id/myRoundPoints"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/leagueTextView"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"
+            android:text="34"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/myTotalPoints"
+            app:layout_constraintStart_toStartOf="@+id/myTotalPoints"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView2" />
+
+    <TextView
+            android:id="@+id/rivalRoundPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/rivalTotalPoints"
+            app:layout_constraintStart_toStartOf="@+id/rivalTotalPoints"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView2" />
+
+    <TextView
+            android:id="@+id/leagueTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Weekly Points"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="14sp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView47"/>
-    <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                          android:id="@+id/guideline47"
-                                          android:orientation="vertical" app:layout_constraintGuide_percent="0.5"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myTotalPoints" />
+
+    <TextView
+            android:id="@+id/myTotalPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="1234"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView47"
+            app:layout_constraintStart_toStartOf="@+id/textView47"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView" />
+
+    <TextView
+            android:id="@+id/rivalTotalPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="1200"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView48"
+            app:layout_constraintStart_toStartOf="@+id/textView48"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView" />
+
+    <TextView
+            android:id="@+id/leagueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Total Points"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+    <android.support.constraint.Guideline
+            android:id="@+id/guideline47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
     <View
             android:id="@+id/divider6"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@android:color/black"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
-            android:text="34"
+            android:id="@+id/myPointsAndBonus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/myProjectedBonus"
-            android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
-            android:textColor="@color/colorPrimary"
-            app:layout_constraintStart_toStartOf="@+id/myRoundPoints"
-            app:layout_constraintEnd_toEndOf="@+id/myRoundPoints"/>
-    <TextView
-            android:text="00"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/rivalProjectedBonus"
-            android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" android:layout_marginTop="8dp"
-            android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintStart_toStartOf="@+id/rivalRoundPoints"
-            app:layout_constraintEnd_toEndOf="@+id/rivalRoundPoints"/>
-    <TextView
-            android:text="You"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView47" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="8dp"
-            android:textSize="18sp" android:layout_marginEnd="32dp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline47" android:textColor="@color/colorPrimary"/>
+            android:text="34 +12"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/myRoundPoints"
+            app:layout_constraintStart_toStartOf="@+id/myRoundPoints"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" />
+
     <TextView
-            android:text="Rival"
+            android:id="@+id/rivalPointsAndBonus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView48" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintStart_toStartOf="@+id/guideline47"
-            android:layout_marginStart="32dp" android:textSize="18sp"
-            android:textColor="@android:color/holo_red_dark"/>
+            android:layout_marginTop="8dp"
+            android:text="56 +10"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/rivalRoundPoints"
+            app:layout_constraintStart_toStartOf="@+id/rivalRoundPoints"
+            app:layout_constraintTop_toBottomOf="@+id/leagueTextView3" />
+
+    <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="You"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline47"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/textView48"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:text="Rival"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guideline47"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/playerConditionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:text="Player Condition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/myPointsAndBonus" />
 </android.support.constraint.ConstraintLayout>

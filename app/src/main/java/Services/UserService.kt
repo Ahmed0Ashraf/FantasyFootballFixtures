@@ -44,7 +44,7 @@ object UserService {
                     if (isCurrent){
                         currentGW = gameWeek.getInt("id")
                         isFinished = gameWeek.getBoolean("finished")
-                        requestedGW = currentGW
+                        requestedGW = currentGW +1
                     }
                 }
                 println("current game week"+currentGW)

@@ -54,13 +54,13 @@ class GwFixturesFragment : Fragment() {
             opponentText.setText(StatsService.fixtures[x].opponent)
             difficultyText.setText(StatsService.fixtures[x].difficulty.toString())
             if (StatsService.fixtures[x].difficulty.equals(2)){
-                difficultyText.setBackgroundColor(GREEN)
+                difficultyText.setBackgroundColor(Color.parseColor("#00AE55"))
             }
             else if (StatsService.fixtures[x].difficulty.equals(3)){
                 difficultyText.setBackgroundColor(GRAY)
             }
             else if (StatsService.fixtures[x].difficulty.equals(4)){
-                difficultyText.setBackgroundColor(RED)
+                difficultyText.setBackgroundColor(Color.parseColor("#CE0001"))
                 difficultyText.setTextColor(WHITE)
 
             }

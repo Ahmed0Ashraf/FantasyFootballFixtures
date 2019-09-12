@@ -16,7 +16,7 @@ object DataService {
         } else if (error is AuthFailureError) {
             Toast.makeText(App.appContext,"",Toast.LENGTH_LONG).show()
         } else if (error is ServerError) {
-            Toast.makeText(App.appContext,"The Server Is Updaing Please Try Later",Toast.LENGTH_LONG).show()
+            Toast.makeText(App.appContext,"The Server Is Updating Please Try Later",Toast.LENGTH_LONG).show()
 
         } else if (error is NetworkError) {
             Toast.makeText(App.appContext,"Connecntion Problems Please Try Again",Toast.LENGTH_LONG).show()
