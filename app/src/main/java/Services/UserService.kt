@@ -115,7 +115,7 @@ object UserService {
 
     }
 
-    fun findTeamPreSeason(complete:(Boolean)-> Unit){
+    /*fun findTeamPreSeason(complete:(Boolean)-> Unit){
 
         val playersRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Listener { response ->
             try{
@@ -202,4 +202,5 @@ object UserService {
         App.prefs.requestQueue.add(playersRequest)
 
     }
+    */
 }

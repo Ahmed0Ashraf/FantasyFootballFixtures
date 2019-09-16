@@ -73,17 +73,95 @@ class HistoryFragment : Fragment() {
             dividedPrice = StatsService.previousSeason[x].seasonEndPrice/10
             endPriceTextView.setText(dividedPrice.toString())
 
-
-
-
-
-
-
-
             previousHistoryContainer.addView(childlayout)
 
         }
+
+
+        for (x in 0 until StatsService.thisSeason.size){
+            var childlayout = LayoutInflater.from(this.context!!).inflate(R.layout.player_this_season_history_layout, presentHistoryContainer, false)
+
+            val gwText = childlayout.findViewById<View>(R.id.gWTextView) as TextView
+            val oppTextView = childlayout.findViewById<View>(R.id.oppTextView) as TextView
+            val pointsText = childlayout.findViewById<View>(R.id.pointsTextView) as TextView
+            val minutesText = childlayout.findViewById<View>(R.id.minutesPlayedTextView) as TextView
+            val goalsScoredText = childlayout.findViewById<View>(R.id.goalsScoredTextView) as TextView
+            val assistsText = childlayout.findViewById<View>(R.id.assistsTextView) as TextView
+            val cleanSheetsText = childlayout.findViewById<View>(R.id.cleanSheetsTextView) as TextView
+            val goalConcededTextView = childlayout.findViewById<View>(R.id.goalConcededTextView) as TextView
+            val pennaltiesSavedTextView = childlayout.findViewById<View>(R.id.pennaltiesSavedTextView) as TextView
+            val yellowCardsTextView = childlayout.findViewById<View>(R.id.yellowCardsTextView) as TextView
+            val redCardsTextView = childlayout.findViewById<View>(R.id.redCardsTextView) as TextView
+            val savesTextView = childlayout.findViewById<View>(R.id.savesTextView) as TextView
+            val bonusTextView = childlayout.findViewById<View>(R.id.bonusTextView) as TextView
+            val priceTextView = childlayout.findViewById<View>(R.id.priceTextView) as TextView
+
+
+            gwText.setText(StatsService.thisSeason[x].gameWeek.toString())
+            oppTextView.setText(StatsService.thisSeason[x].opp)
+
+            pointsText.setText(StatsService.thisSeason[x].totalPoints.toString())
+            minutesText.setText(StatsService.thisSeason[x].minutesPlayed.toString())
+            goalsScoredText.setText(StatsService.thisSeason[x].goalsScored.toString())
+            assistsText.setText(StatsService.thisSeason[x].assists.toString())
+            cleanSheetsText.setText(StatsService.thisSeason[x].cleanSheets.toString())
+            goalConcededTextView.setText(StatsService.thisSeason[x].goalsConceded.toString())
+            pennaltiesSavedTextView.setText(StatsService.thisSeason[x].penaltiesSaved.toString())
+            yellowCardsTextView.setText(StatsService.thisSeason[x].yellowCards.toString())
+            redCardsTextView.setText(StatsService.thisSeason[x].redCards.toString())
+            savesTextView.setText(StatsService.thisSeason[x].saves.toString())
+            bonusTextView.setText(StatsService.thisSeason[x].bonus.toString())
+
+            var dividedPrice = StatsService.thisSeason[x].price/10
+            priceTextView.setText(dividedPrice.toString())
+
+
+            presentHistoryContainer.addView(childlayout)
+
+        }
+        showTotal()
+
     }
+fun showTotal(){
+    var childlayout = LayoutInflater.from(this.context!!).inflate(R.layout.player_this_season_history_layout, presentHistoryContainer, false)
+
+    val gwText = childlayout.findViewById<View>(R.id.gWTextView) as TextView
+    val oppTextView = childlayout.findViewById<View>(R.id.oppTextView) as TextView
+    val pointsText = childlayout.findViewById<View>(R.id.pointsTextView) as TextView
+    val minutesText = childlayout.findViewById<View>(R.id.minutesPlayedTextView) as TextView
+    val goalsScoredText = childlayout.findViewById<View>(R.id.goalsScoredTextView) as TextView
+    val assistsText = childlayout.findViewById<View>(R.id.assistsTextView) as TextView
+    val cleanSheetsText = childlayout.findViewById<View>(R.id.cleanSheetsTextView) as TextView
+    val goalConcededTextView = childlayout.findViewById<View>(R.id.goalConcededTextView) as TextView
+    val pennaltiesSavedTextView = childlayout.findViewById<View>(R.id.pennaltiesSavedTextView) as TextView
+    val yellowCardsTextView = childlayout.findViewById<View>(R.id.yellowCardsTextView) as TextView
+    val redCardsTextView = childlayout.findViewById<View>(R.id.redCardsTextView) as TextView
+    val savesTextView = childlayout.findViewById<View>(R.id.savesTextView) as TextView
+    val bonusTextView = childlayout.findViewById<View>(R.id.bonusTextView) as TextView
+    val priceTextView = childlayout.findViewById<View>(R.id.priceTextView) as TextView
+
+
+    gwText.setText("")
+    oppTextView.setText("Total")
+
+    pointsText.setText(StatsService.player.totalPoints.toString())
+    minutesText.setText(StatsService.player.minutesPlayed.toString())
+    goalsScoredText.setText(StatsService.player.goalsScored.toString())
+    assistsText.setText(StatsService.player.assists.toString())
+    cleanSheetsText.setText(StatsService.player.cleanSheets.toString())
+    goalConcededTextView.setText(StatsService.player.goalsConceded.toString())
+    pennaltiesSavedTextView.setText(StatsService.player.penaltiesSaved.toString())
+    yellowCardsTextView.setText(StatsService.player.yellowCards.toString())
+    redCardsTextView.setText(StatsService.player.redCards.toString())
+    savesTextView.setText(StatsService.player.saves.toString())
+    bonusTextView.setText(StatsService.player.bonus.toString())
+
+    var dividedPrice = StatsService.player.price/10
+    priceTextView.setText(dividedPrice.toString())
+
+
+    presentHistoryContainer.addView(childlayout)
+}
 
 
 }

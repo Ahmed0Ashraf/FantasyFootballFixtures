@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var elementType:Int,var lastPoints:Int,var isCaptian:Boolean,
-             var isViceCaptian:Boolean,var price:Double,
+             var isViceCaptian:Boolean,var price:Double,var minutesPlayed:Int,
              var percent:Double,var totalPoints:Int,var goalsScored:Int,var assists:Int, var cleanSheets:Int,
              var goalsConceded:Int,var penaltiesSaved:Int,var yellowCards:Int,var redCards:Int,var saves:Int,var bonus:Int,var news:String,var chanceOfPlaying:Int):Parcelable {
 
@@ -18,6 +18,7 @@ class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var e
         parcel.readByte() != 0.toByte(),
         parcel.readByte() != 0.toByte(),
         parcel.readDouble(),
+        parcel.readInt(),
         parcel.readDouble(),
         parcel.readInt(),
         parcel.readInt(),
@@ -46,6 +47,7 @@ class Player(var id:Int,var name:String,var status:String,var teamCode:Int,var e
         parcel.writeByte(if (isCaptian) 1 else 0)
         parcel.writeByte(if (isViceCaptian) 1 else 0)
         parcel.writeDouble(price)
+        parcel.writeInt(minutesPlayed)
         parcel.writeDouble(percent)
         parcel.writeInt(totalPoints)
         parcel.writeInt(goalsScored)

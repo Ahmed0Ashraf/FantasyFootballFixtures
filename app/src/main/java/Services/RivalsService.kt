@@ -129,6 +129,7 @@ var requestedRivalGameWeek = 0
                             val redCards = player.getInt("red_cards")
                             val saves = player.getInt("saves")
                             val bonus = player.getInt("bonus")
+                            val minutesPlayed = player.getInt("minutes")
                             val news = player.getString("news")
                             var chance = 0
                             if (news.equals("")) {
@@ -151,6 +152,7 @@ var requestedRivalGameWeek = 0
                                     false,
                                     false,
                                     cost,
+                                    minutesPlayed,
                                     percent,
                                     totalPoints,
                                     goalsScored,

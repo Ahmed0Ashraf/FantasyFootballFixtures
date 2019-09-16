@@ -1,7 +1,6 @@
 package com.innovators.fantasyfootballfixtures.Controller
 
 
-import Model.LiveFixture
 import Services.*
 import android.app.AlertDialog
 import android.content.Context
@@ -18,7 +17,6 @@ import android.widget.*
 import com.innovators.fantasyfootballfixtures.R
 import kotlinx.android.synthetic.main.fragment_rivals.*
 import kotlinx.android.synthetic.main.rival_compare.*
-import kotlinx.android.synthetic.main.rivals_header.*
 import java.util.ArrayList
 
 
@@ -35,6 +33,7 @@ class RivalsFragment : Fragment() {
     var rivalsIds = arrayListOf<String>()
     var spinnerArray = arrayListOf<String>()
     var infoHidden = false
+    var bonus = -1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -119,14 +118,16 @@ class RivalsFragment : Fragment() {
                                     if (LiveService.weekFinished){
                                         BonusService.calculateRivalFinishedBonus()
                                     }else{
-
+                                        BonusService.calculateRivalProvisionedBonus()
                                     }
                                 myTotalPoints.text = UserService.totalPoints.toString()
                                 rivalTotalPoints.text = RivalsService.rivalTotalPoints.toString()
-                                myRoundPoints.text = UserService.points.toString()
-                                rivalRoundPoints.text = RivalsService.rivalPoints.toString()
-                                myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
-                                rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
+                                myPoints.text = UserService.points.toString()
+                                myBonus.text = BonusService.playersBonus.toString()
+                                rivalPoints.text = RivalsService.rivalPoints.toString()
+                                rivalBonus.text = BonusService.rivalBonus.toString()
+                                //myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
+                                //rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
 
                             }
                         }
@@ -222,15 +223,17 @@ class RivalsFragment : Fragment() {
                                        rivalInflator()
                                        if (LiveService.weekFinished){
                                            BonusService.calculateRivalFinishedBonus()
-                                       }else{
-
+                                       }else {
+                                           BonusService.calculateRivalProvisionedBonus()
                                        }
                                        myTotalPoints.text = UserService.totalPoints.toString()
                                        rivalTotalPoints.text = RivalsService.rivalTotalPoints.toString()
-                                       myRoundPoints.text = UserService.points.toString()
-                                       rivalRoundPoints.text = RivalsService.rivalPoints.toString()
-                                       myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
-                                       rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
+                                       myPoints.text = UserService.points.toString()
+                                       myBonus.text = BonusService.playersBonus.toString()
+                                       rivalPoints.text = RivalsService.rivalPoints.toString()
+                                       rivalBonus.text = BonusService.rivalBonus.toString()
+                                       //myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
+                                       //rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
 
                                    }
                                }
@@ -267,8 +270,17 @@ class RivalsFragment : Fragment() {
             val rivalPlayerStatsBtn =childlayout.findViewById<View>(R.id.rivalPlayerStatsBtn) as ImageButton
 
             rivalNameText.text = RivalsService.rivalPlayers[x].name
-            rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
-            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode))))
+
+            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode),RivalsService.rivalPlayers[x].id)))
+            if(bonus == -1){
+                rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            }
+            else{
+                rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString() +"+"+bonus
+                bonus = -1
+            }
+
+
 
             rivalPlayerStatsBtn?.setOnClickListener {
                 if (DataService.checkInternetConncetion()) {
@@ -296,9 +308,14 @@ class RivalsFragment : Fragment() {
             val rivalPlayerStatsBtn =childlayout.findViewById<View>(R.id.rivalPlayerStatsBtn) as ImageButton
 
             rivalNameText.text = RivalsService.rivalPlayers[x].name
-            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode))))
-
-            rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            rivalNameText.setTextColor(Color.parseColor(teamCondition(TeamsService.findTeamidByCode(RivalsService.rivalPlayers[x].teamCode),RivalsService.rivalPlayers[x].id)))
+            if(bonus == -1){
+                rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString()
+            }
+            else{
+                rivalPlayerPointsText.text = RivalsService.rivalPlayers[x].lastPoints.toString() +"+"+bonus
+                bonus = -1
+            }
             rivalPlayerStatsBtn?.setOnClickListener {
                 if (DataService.checkInternetConncetion()) {
                     StatsService.findPlayerStats(RivalsService.rivalPlayers[x].id){ statsSuccess ->
@@ -325,14 +342,21 @@ class RivalsFragment : Fragment() {
         }
     }
 
-    fun teamCondition(teamid:Int):String{
+    fun teamCondition(teamid:Int,playerId:Int):String{
         for (x in 0 until LiveService.fixtures.size){
             if (teamid == LiveService.fixtures[x].homeTeam || teamid == LiveService.fixtures[x].awayTeam){
-                if ( LiveService.fixtures[x].finishedProvisional){
+                if ( LiveService.fixtures[x].finished){
                     return "#000000"
                 }else if ( !LiveService.fixtures[x].started){
                     return "#CE0001"
-                }else if ( LiveService.fixtures[x].started && !LiveService.fixtures[x].finished ){
+                }else if ( LiveService.fixtures[x].started && !LiveService.fixtures[x].finishedProvisional ){
+                    println(LiveService.weekBonus.size.toString() +"bbbbbbbbbbbbbbbbbb")
+                    for (y in 0 until LiveService.weekBonus.size){
+                        if (playerId == LiveService.weekBonus[y].id){
+                            bonus = LiveService.weekBonus[y].bonus
+                            println("bonaaaaaaaaaaas")
+                        }
+                    }
                     return "#00AE55"
                 }else{
                     return "#889487"

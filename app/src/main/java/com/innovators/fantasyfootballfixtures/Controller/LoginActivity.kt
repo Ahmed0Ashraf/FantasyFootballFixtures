@@ -35,7 +35,9 @@ class LoginActivity : AppCompatActivity() {
                                 if (fixtureSuccess){
                                     if (LiveService.weekFinished){
                                         BonusService.calculateUserFinishedBonus()
-                                    }else{
+                                    }else {
+                                        BonusService.calculateUserProvisionedBonus()
+
                                         /////////////////////////////////////////////
                                     }
                                     if (App.prefs.rivalsIds.isEmpty()){

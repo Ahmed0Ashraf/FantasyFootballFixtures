@@ -49,6 +49,8 @@ object PlayerService {
                             val redCards = player.getInt("red_cards")
                             val saves = player.getInt("saves")
                             val bonus = player.getInt("bonus")
+                            val minutesPlayed = player.getInt("minutes")
+
                             val news = player.getString("news")
                             var chance = 0
                             if (news.equals("")){
@@ -60,7 +62,7 @@ object PlayerService {
                             val cost = player.getInt("now_cost").toDouble()
                             val percent = player.getDouble("selected_by_percent")
 
-                            UserService.myPlayers.add(Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance))
+                            UserService.myPlayers.add(Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,minutesPlayed,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance))
 
                             break
                         }
@@ -120,6 +122,8 @@ object PlayerService {
                         val redCards = player.getInt("red_cards")
                         val saves = player.getInt("saves")
                         val bonus = player.getInt("bonus")
+                        val minutesPlayed = player.getInt("minutes")
+
                         val news = player.getString("news")
                         var chance = 0
                         if (news.equals("")){
@@ -136,7 +140,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,minutesPlayed,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
                     }
@@ -187,6 +191,8 @@ object PlayerService {
                         val redCards = player.getInt("red_cards")
                         val saves = player.getInt("saves")
                         val bonus = player.getInt("bonus")
+                        val minutesPlayed = player.getInt("minutes")
+
                         val news = player.getString("news")
                         var chance = 0
                         if (news.equals("")){
@@ -203,7 +209,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,minutesPlayed,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
                     }
@@ -253,6 +259,8 @@ object PlayerService {
                     val redCards = player.getInt("red_cards")
                     val saves = player.getInt("saves")
                     val bonus = player.getInt("bonus")
+                    val minutesPlayed = player.getInt("minutes")
+
                     val news = player.getString("news")
                     var chance = 0
                     if (news.equals("")){
@@ -269,7 +277,7 @@ object PlayerService {
 
                         val id = player.getInt("id")
                         searchedPlayers.add(
-                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
+                            Player(id, webName, status, teamCode, elementType, lastPoints,false,false,cost,minutesPlayed,percent,totalPoints,goalsScored, assists, cleanSheets, goalsConceded, penaltiesSaved, yellowCards, redCards, saves, bonus,news,chance)
 
                         )
 

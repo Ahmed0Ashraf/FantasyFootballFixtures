@@ -27,6 +27,7 @@ class PlayerStatsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_player_stats)
 
         player = intent.getParcelableExtra("player")
+        StatsService.player = player
         statsPlayerName.text = player.name
         statsPlayerTeam.text = TeamsService.findTeamName(player.teamCode)
         statsPlayerPosition.text = PlayerService.positionToString(player.elementType)
