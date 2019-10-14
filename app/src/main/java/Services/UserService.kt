@@ -31,6 +31,7 @@ object UserService {
     var currentGW : Int = 0
     var isFinished = false
     var requestedGW : Int = 0
+    var activeChip: String? = ""
 
 
     fun findCurrentGameWeek(complete:(Boolean)-> Unit){
@@ -72,6 +73,9 @@ object UserService {
             val url = "https://fantasy.premierleague.com/api/entry/"+ userId+"/event/"+ currentGW+"/picks/"
         val teamRequest = object: JsonObjectRequest(Method.GET, url,null, Listener { response ->
             try{
+                activeChip = response.getString("active_chip")
+
+
                 val entryHistory = response.getJSONObject("entry_history")
                 points = entryHistory.getInt("points")
                 totalPoints = entryHistory.getInt("total_points")

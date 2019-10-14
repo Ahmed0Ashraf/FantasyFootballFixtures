@@ -970,38 +970,21 @@
             android:layout_marginStart="8dp" android:paddingBottom="24dp"
             app:layout_constraintEnd_toStartOf="@+id/guideline6" android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/guideline11"/>
+
     <Button
-            android:text="GameWeek 1"
+            android:id="@+id/gWPointstext"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:id="@+id/gWPointstext"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/nextGWFixtureBtn"
-            app:layout_constraintBottom_toTopOf="@+id/guideline" style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/previousGWFixtureBtn"/>
-    <ImageButton
-            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:id="@+id/nextGWFixtureBtn" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/background_light"
+            android:text="GameWeek 1"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
-            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
-    />
-    <ImageButton
-            app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:id="@+id/previousGWFixtureBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            style="@style/Base.Widget.AppCompat.Button.Borderless.Colored"
-            android:background="@android:color/background_light" android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toStartOf="parent"
-    />
+            app:layout_constraintVertical_bias="1.0" />
+
     <android.support.constraint.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
                                           android:id="@+id/guideline"
                                           android:orientation="horizontal" app:layout_constraintGuide_percent="0.09"/>
@@ -1108,26 +1091,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             android:textColor="@android:color/background_light" android:visibility="invisible"
             tools:visibility="visible"/>
-    <View
-            android:id="@+id/divider15"
-            android:layout_width="1dp"
-            android:layout_height="0dp"
-            android:background="@android:color/background_dark"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.727" app:layout_constraintStart_toEndOf="@+id/previousGWFixtureBtn"
-    />
-    <View
-            android:id="@+id/divider16"
-            android:layout_width="1dp"
-            android:layout_height="0dp"
-            android:background="@android:color/background_dark"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.727"
-            app:layout_constraintStart_toStartOf="@+id/nextGWFixtureBtn"/>
+
     <TextView
             android:text="888"
             android:layout_width="wrap_content"

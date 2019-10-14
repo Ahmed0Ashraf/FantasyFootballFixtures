@@ -16,6 +16,7 @@ import android.widget.*
 
 import com.innovators.fantasyfootballfixtures.R
 import kotlinx.android.synthetic.main.fragment_rivals.*
+import kotlinx.android.synthetic.main.league_header.*
 import kotlinx.android.synthetic.main.rival_compare.*
 import java.util.ArrayList
 
@@ -46,6 +47,7 @@ class RivalsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
        // App.prefs.rivalsIds = ""
+        gWPointstext.text = "Gameweek "+UserService.currentGW
 
         if (App.prefs.rivalsIds.isEmpty()){
             infoHidden = true
@@ -60,6 +62,9 @@ class RivalsFragment : Fragment() {
             rivalDividerRightBot.visibility = View.INVISIBLE
             rivalDividerLeftBot.visibility = View.INVISIBLE
             include.visibility = View.INVISIBLE
+            linearLayoutLineUp.visibility = View.INVISIBLE
+            linearLayoutSubs.visibility = View.INVISIBLE
+            rivalComparison.visibility = View.INVISIBLE
         }else{
             var idsArray = App.prefs.rivalsIds.split("-").toTypedArray()
             rivalsIds = idsArray.toCollection(ArrayList())
@@ -117,6 +122,13 @@ class RivalsFragment : Fragment() {
                                 }
                                     if (LiveService.weekFinished){
                                         BonusService.calculateRivalFinishedBonus()
+                                        rivalBonus.visibility = View.INVISIBLE
+                                        rivalBonusTextView.visibility = View.INVISIBLE
+                                        myBonus.visibility = View.INVISIBLE
+                                        myBonusTextView.visibility = View.INVISIBLE
+                                        liveWeeklyScore.text = "Weekly Score"
+
+
                                     }else{
                                         BonusService.calculateRivalProvisionedBonus()
                                     }
@@ -126,6 +138,7 @@ class RivalsFragment : Fragment() {
                                 myBonus.text = BonusService.playersBonus.toString()
                                 rivalPoints.text = RivalsService.rivalPoints.toString()
                                 rivalBonus.text = BonusService.rivalBonus.toString()
+
                                 //myPointsAndBonus.text = BonusService.weeklyPoints.toString() + "+" + BonusService.playersBonus.toString()
                                 //rivalPointsAndBonus.text = BonusService.rivalWeeklyPoints.toString() + "+" + BonusService.rivalBonus.toString()
 
@@ -223,6 +236,12 @@ class RivalsFragment : Fragment() {
                                        rivalInflator()
                                        if (LiveService.weekFinished){
                                            BonusService.calculateRivalFinishedBonus()
+                                           rivalBonus.visibility = View.INVISIBLE
+                                           rivalBonusTextView.visibility = View.INVISIBLE
+                                           myBonus.visibility = View.INVISIBLE
+                                           myBonusTextView.visibility = View.INVISIBLE
+                                           liveWeeklyScore.text = "Weekly Score"
+
                                        }else {
                                            BonusService.calculateRivalProvisionedBonus()
                                        }
@@ -350,15 +369,18 @@ class RivalsFragment : Fragment() {
                 }else if ( !LiveService.fixtures[x].started){
                     return "#CE0001"
                 }else if ( LiveService.fixtures[x].started && !LiveService.fixtures[x].finishedProvisional ){
-                    println(LiveService.weekBonus.size.toString() +"bbbbbbbbbbbbbbbbbb")
                     for (y in 0 until LiveService.weekBonus.size){
                         if (playerId == LiveService.weekBonus[y].id){
                             bonus = LiveService.weekBonus[y].bonus
-                            println("bonaaaaaaaaaaas")
                         }
                     }
                     return "#00AE55"
                 }else{
+                    for (y in 0 until LiveService.weekBonus.size){
+                        if (playerId == LiveService.weekBonus[y].id){
+                            bonus = LiveService.weekBonus[y].bonus
+                        }
+                    }
                     return "#889487"
                 }
             }
