@@ -2,6 +2,7 @@ package Services
 
 import Model.Fixture
 import Model.Player
+import Utilities.MySingleton
 import Utilities.URL_DATA
 import Utilities.URL_FIXTURES
 import android.util.Log
@@ -64,7 +65,9 @@ object FixturesService {
             }
         }
 
-        App.prefs.requestQueue.add(fixtureRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(fixtureRequest)
+
+        //App.prefs.requestQueue.add(fixtureRequest)
 
     }
 
@@ -109,8 +112,9 @@ object FixturesService {
                 return super.getBodyContentType()
             }
         }
+        MySingleton.getInstance(App.appContext).addToRequestQueue(fixtureRequest)
 
-        App.prefs.requestQueue.add(fixtureRequest)
+        //App.prefs.requestQueue.add(fixtureRequest)
 
     }
     fun findRequestedGWFixtures(gw:Int,complete:(Boolean)-> Unit){

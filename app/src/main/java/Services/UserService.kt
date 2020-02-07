@@ -2,6 +2,7 @@ package Services
 
 import Model.Player
 import Model.Team
+import Utilities.MySingleton
 import Utilities.URL_DATA
 import android.content.Context
 import android.util.Log
@@ -66,7 +67,9 @@ object UserService {
             }
         }
 
-        App.prefs.requestQueue.add(gameWeekRequest)
+        //App.prefs.requestQueue.add(gameWeekRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(gameWeekRequest)
+
 
     }
     fun findTeam(complete:(Boolean)-> Unit){
@@ -115,7 +118,10 @@ object UserService {
             }
         }
 
-        App.prefs.requestQueue.add(teamRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(teamRequest)
+
+
+        //App.prefs.requestQueue.add(teamRequest)
 
     }
 

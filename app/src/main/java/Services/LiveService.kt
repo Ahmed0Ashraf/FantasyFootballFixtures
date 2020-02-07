@@ -4,6 +4,7 @@ import Model.Fixture
 import Model.LiveFixture
 import Model.Player
 import Model.RoundBonus
+import Utilities.MySingleton
 import Utilities.URL_FIXTURES
 import Utilities.URL_STATS
 import Utilities.URL_STATUS
@@ -26,7 +27,7 @@ object LiveService {
     var dayFinished = true
     fun findGWFixtures(complete:(Boolean)-> Unit){
 
-        val fixtureRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES + UserService.currentGW ,null,
+        val findGwRequest = object: JsonArrayRequest(Method.GET, URL_FIXTURES + UserService.currentGW ,null,
             Response.Listener { response ->
                 try {
                     fixtures.clear()
@@ -120,12 +121,15 @@ object LiveService {
             }
         }
 
-        App.prefs.requestQueue.add(fixtureRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(findGwRequest)
+
+
+        //App.prefs.requestQueue.add(fixtureRequest)
 
     }
     fun findEventStatus(complete:(Boolean)-> Unit){
 
-        val fixtureRequest = object: JsonObjectRequest(Method.GET, URL_STATUS,null,
+        val findStatusRequest = object: JsonObjectRequest(Method.GET, URL_STATUS,null,
             Response.Listener { response ->
                 try {
                     var statusArray = response.getJSONArray("status")
@@ -163,7 +167,9 @@ object LiveService {
             }
         }
 
-        App.prefs.requestQueue.add(fixtureRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(findStatusRequest)
+
+        // App.prefs.requestQueue.add(fixtureRequest)
 
     }
     fun selectorBonusSystem(p: RoundBonus): Int = p.bonus

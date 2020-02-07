@@ -1,6 +1,7 @@
 package Services
 
 import Model.Team
+import Utilities.MySingleton
 import Utilities.URL_DATA
 import android.content.Context
 import android.util.Log
@@ -60,7 +61,6 @@ object TeamsService {
         val teamRequest = object: JsonObjectRequest(Method.GET, URL_DATA,null, Response.Listener { response ->
             try{
                 var teamsObject = response.getJSONArray("teams")
-                println("team koss")
 
                 for(x in 0 until teamsObject.length()){
                     val team = teamsObject.getJSONObject(x)
@@ -71,10 +71,7 @@ object TeamsService {
                     teams.add(Team(id,teamCode, name, shortName))
 
                 }
-                for(x in 0 until teamsObject.length()){
-                    println( teams[x].name)
 
-                }
                 complete(true)
             }catch (e: JSONException){
                 complete(false)
@@ -91,7 +88,9 @@ object TeamsService {
             }
         }
 
-        App.prefs.requestQueue.add(teamRequest)
+        //App.prefs.requestQueue.add(teamRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(teamRequest)
+
 
     }
 }

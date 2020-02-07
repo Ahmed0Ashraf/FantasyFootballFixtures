@@ -1,6 +1,7 @@
 package Services
 
 import Model.Player
+import Utilities.MySingleton
 import Utilities.URL_DATA
 import android.content.Context
 import android.util.Log
@@ -94,7 +95,10 @@ object PlayerService {
             }
         }
 
-        App.prefs.requestQueue.add(playersRequest)
+        MySingleton.getInstance(App.appContext).addToRequestQueue(playersRequest)
+
+
+        //App.prefs.requestQueue.add(playersRequest)
 
     }
     fun searchPlayersByPosition(position: Int,complete:(Boolean)-> Unit){

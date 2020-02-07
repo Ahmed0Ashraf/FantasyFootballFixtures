@@ -2,6 +2,7 @@ package Services
 
 import Model.Player
 import Model.Rival
+import Utilities.MySingleton
 import Utilities.URL_DATA
 import Utilities.URL_ENTRY
 import android.util.Log
@@ -99,8 +100,9 @@ var requestedRivalGameWeek = 0
                 return super.getBodyContentType()
             }
         }
+        MySingleton.getInstance(App.appContext).addToRequestQueue(teamRequest)
 
-        App.prefs.requestQueue.add(teamRequest)
+            //App.prefs.requestQueue.add(teamRequest)
 
     }
     fun findRivalsPlayerInfo(complete:(Boolean)-> Unit){
