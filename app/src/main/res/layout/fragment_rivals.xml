@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".Controller.LeaguesFragment" android:id="@+id/frameLayout5"
+                                             android:background="@android:color/background_light">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/linearLayout2">
+        <include layout="@layout/league_header"></include>
+    </LinearLayout>
+
+    <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Enter ID:"
+                        android:textAllCaps="true"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toStartOf="@+id/rivalEditText"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                        android:id="@+id/rivalEditText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="Rival ID:"
+                        android:inputType="number"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView"
+                        app:layout_constraintEnd_toStartOf="@+id/rivalAddBtn"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="@+id/textView" />
+
+                <Button
+                        android:id="@+id/rivalAddBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="ADD"
+                        app:layout_constraintBottom_toBottomOf="@+id/rivalEditText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/rivalEditText"
+                        app:layout_constraintTop_toTopOf="@+id/rivalEditText" />
+
+                <TextView
+                        android:id="@+id/chooseRivalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Choose Rival"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rivalEditText" />
+
+                <Spinner
+                        android:id="@+id/rivalDropIds"
+                        android:layout_width="223dp"
+                        android:layout_height="36dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="@+id/rivalEditText"
+                        app:layout_constraintTop_toBottomOf="@+id/chooseRivalText" />
+
+                <TextView
+                        android:id="@+id/rivalTeamName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Team Name"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textSize="18sp"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.489"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guideline73" />
+
+                <View
+                        android:id="@+id/rivalDivider1"
+                        android:layout_width="395dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rivalTeamName" />
+
+                <TextView
+                        android:id="@+id/lineUpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Line Up"
+                        android:textAllCaps="true"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline48"
+                        app:layout_constraintHorizontal_bias="0.4"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+                <TextView
+                        android:id="@+id/subsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Substitutes"
+                        android:textAllCaps="true"
+                        android:textStyle="bold|italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.62"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48"
+                        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+                <include
+                        android:id="@+id/include"
+                        layout="@layout/rivals_header"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rivalDivider1" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline48"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline73"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="127dp" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline74"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="94dp" />
+
+                <android.support.constraint.Guideline
+                        android:id="@+id/guideline75"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="317dp" />
+
+                <LinearLayout
+                        android:id="@+id/linearLayoutLineUp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@+id/guideline48"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/lineUpText">
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:id="@+id/linearLayoutSubs"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48"
+                        app:layout_constraintTop_toBottomOf="@+id/subsText">
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                    <include layout="@layout/rivals" />
+
+                </LinearLayout>
+
+                <include
+                        android:id="@+id/rivalComparison"
+                        layout="@layout/rival_compare"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/linearLayoutLineUp"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSubs" />
+
+                <View
+                        android:id="@+id/rivalDividerLeftBot"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                        android:id="@+id/rivalDividerBot"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintBottom_toTopOf="@+id/linearLayoutLineUp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                        android:id="@+id/rivalDividerMid"
+                        android:layout_width="1dp"
+                        android:layout_height="0dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/linearLayoutLineUp"
+                        app:layout_constraintTop_toBottomOf="@+id/include" />
+
+                <View
+                        android:id="@+id/rivalDividerRightBot"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/guideline48"
+                        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSubs" />
+
+                <Button
+                        android:id="@+id/deleteRivalBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Delete"
+                        app:layout_constraintBottom_toTopOf="@+id/guideline73"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/rivalDropIds" />
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
