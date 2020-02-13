@@ -82,7 +82,7 @@ var requestedRivalGameWeek = 0
                 var fullName = firstName + " " + lastName
 
                 rivalsInfo.add(Rival(rivalId,fullName,teamName))
-                println("som ma3'raby")
+
 
                 complete(true)
             } catch (e: JSONException) {
